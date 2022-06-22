@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::get('/top10books  ', [\App\Http\Controllers\HomeController::class, 'top10BookDiscount']);
+//Route::prefix('books')->group(function (){
+//
+//
+//});
+Route::get('/top10books  ', [\App\Http\Controllers\BookController::class, 'top10BookDiscount']);
+Route::get('/top8booksrecommended  ', [\App\Http\Controllers\BookController::class, 'get8BookRecommended']);
+Route::get('/get8BookPopular  ', [\App\Http\Controllers\BookController::class, 'get8BookPopular']);
+Route::get('/getDiscountPrice  ', [\App\Http\Controllers\BookController::class, 'getDiscountPrice']);
