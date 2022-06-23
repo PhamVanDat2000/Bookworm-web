@@ -13,19 +13,19 @@ class BookRepository extends BaseRepository
     {
         $this->query = Book::query();
     }
-    public function get10BookDiscount(){
+    public function getTopBooksDiscount($request){
         $books = $this->query
             ->join('discount', 'book.id', '=', 'discount.book_id')
             ->select('book.*', 'discount.discount_price')
             ->orderByRaw('book.book_price-discount.discount_price DESC')
-            ->limit(10)
+            ->limit($request)
             ->get();
         return $books;
     }
 
 
 
-    public function get8BookRecommended(){
+    public function getTopBooksRecommended($request){
         return Book::query()
             ->join('review', 'review.book_id', 'book.id')
             ->select('book.id', 'book.book_title', DB::raw('AVG(review.rating_start) as avg_rating'),
@@ -36,11 +36,11 @@ class BookRepository extends BaseRepository
             ->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price')
             ->join('discount', 'book.id', 'discount.book_id')
             ->orderByRaw('avg_rating desc, final_price asc')
-            ->limit(8)
+            ->limit($request)
             ->get();
     }
 
-    public function get8BookPopular(){
+    public function getTopBooksPopular($request){
         return Book::query()
             ->join('review', 'review.book_id', 'book.id')
             ->select('book.id', 'book.book_title', DB::raw('count(review.review_title) as total_review'),
@@ -51,7 +51,7 @@ class BookRepository extends BaseRepository
             ->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price')
             ->join('discount', 'book.id', 'discount.book_id')
             ->orderByRaw('total_review desc, final_price asc')
-            ->limit(8)
+            ->limit($request)
             ->get();
     }
 

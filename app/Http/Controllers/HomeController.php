@@ -13,17 +13,17 @@ class BookController extends Controller
         $this->_bookRepository = $bookRepository;
     }
 
-    public function top10BookDiscount(){
-        return response($this->_bookRepository->get10BookDiscount());
+    public function getTopBooksDiscount(Request $request){
+        return response($this->_bookRepository->getTopBooksDiscount($request->input('total')));
     }
-    public function get8BookRecommended(){
-        return response($this->_bookRepository->get8BookRecommended());
+    public function getTopBooksRecommended(Request $request){
+        return response($this->_bookRepository->getTopBooksRecommended($request->input('total')));
     }
-    public function get8BookPopular(){
-        return response($this->_bookRepository->get8BookPopular());
+    public function getTopBooksPopular(Request $request){
+        return response($this->_bookRepository->getTopBooksPopular($request->input('total')));
     }
-    public function getDiscountPrice(){
-        return response($this->_bookRepository->getDiscountPrice());
+    public function getFinalPrice(){
+        return response($this->_bookRepository->getFinalPrice());
     }
 
 
