@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\BookRepository;
 use Illuminate\Http\Request;
 
-class BookController extends Controller
+class HomeController extends Controller
 {
     private BookRepository $_bookRepository;
     public function __construct(BookRepository $bookRepository)
@@ -14,16 +14,17 @@ class BookController extends Controller
     }
 
     public function getTopBooksDiscount(Request $request){
-        return response($this->_bookRepository->getTopBooksDiscount($request->input('total')));
+        return response(
+			$this->_bookRepository->getTopBooksDiscount()->limit($request->input('total'))->get());
     }
     public function getTopBooksRecommended(Request $request){
-        return response($this->_bookRepository->getTopBooksRecommended($request->input('total')));
+        return response($this->_bookRepository->getTopBooksRecommended()->limit($request->input('total'))->get());
     }
     public function getTopBooksPopular(Request $request){
-        return response($this->_bookRepository->getTopBooksPopular($request->input('total')));
+        return response($this->_bookRepository->getTopBooksPopular()->limit($request->input('total'))->get());
     }
     public function getFinalPrice(){
-        return response($this->_bookRepository->getFinalPrice());
+        return response($this->_bookRepository->getFinalPrice()->get());
     }
 
 

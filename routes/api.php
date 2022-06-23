@@ -23,7 +23,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //
 //
 //});
-Route::get('/top10books  ', [\App\Http\Controllers\BookController::class, 'top10BookDiscount']);
-Route::get('/top8booksrecommended  ', [\App\Http\Controllers\BookController::class, 'get8BookRecommended']);
-Route::get('/get8BookPopular  ', [\App\Http\Controllers\BookController::class, 'get8BookPopular']);
-Route::get('/getDiscountPrice  ', [\App\Http\Controllers\BookController::class, 'getDiscountPrice']);
+Route::get('/top-books-discount', [\App\Http\Controllers\HomeController::class, 'getTopBooksDiscount'])->name('topBookDiscount');
+Route::get('/top-books-recommended', [\App\Http\Controllers\HomeController::class, 'getTopBooksRecommended']);
+Route::get('/get-books-popularity', [\App\Http\Controllers\HomeController::class, 'getTopBooksPopular']);
+Route::get('/get-final-price', [\App\Http\Controllers\HomeController::class, 'getFinalPrice']);
+
+
+Route::get('/sort-by-on-sale', [\App\Http\Controllers\ShopController::class, 'sortByOnSale']);
+Route::get('/sort-by-on-popularity', [\App\Http\Controllers\ShopController::class, 'sortByPopularity']);
+Route::get('/sort-by-on-price', [\App\Http\Controllers\ShopController::class, 'sortByPrice']);
+
+Route::get('/filter-by-category/{id}', [\App\Http\Controllers\ShopController::class, 'filterByCategory']);
+Route::get('/filter-by-author/{id}', [\App\Http\Controllers\ShopController::class, 'filterByAuthor']);
+Route::get('/filter-by-star', [\App\Http\Controllers\ShopController::class, 'filterByStar']);
+
+
+Route::get('/get-book-by-id', [\App\Http\Controllers\ShopController::class, 'getBookById']);
+
+
+
+

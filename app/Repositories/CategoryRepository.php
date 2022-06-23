@@ -11,15 +11,13 @@ class CategoryRepository extends BaseRepository
     {
         $this->query = Category::query();
     }
-    public function getByCategory($id){
+    public function filterByCategory($id){
 		$books = $this->query->select('category.id', 'category.category_name', 'book.id as book_id', 'book.book_title')
 		->leftjoin('book', 'category.id', '=', 'book.category_id')
 		->where('category.id', '=', "{$id}")
 		;
 		return $books;
 	}
-
-
 
     public function create($data)
     {
