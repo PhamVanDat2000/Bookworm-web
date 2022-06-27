@@ -9,16 +9,26 @@ use Illuminate\Support\Facades\DB;
 class ReviewRepository extends BaseRepository
 {
     protected $query;
+
     public function __construct()
     {
         $this->query = Review::query();
     }
-    public function filterByStar($filterStar){
+
+    public function filterByStar($filterStar)
+    {
         $books = $this->query->select('book.id', 'book.book_title')
             ->rightjoin('book', 'book.id', '=', 'review.book_id')
             ->groupBy('book.id', 'book.book_title')
-            ->having(DB::raw('Avg(review.rating_start)'), '>=', "{$filterStar}")
-        ;
+            ->having(DB::raw('Avg(review.rating_start)'), '>=', "{$filterStar}");
+        return $books;
+    }
+
+    public function sortReview($id, $order){
+        $books = $this->query->selectRaw('review.*')
+            ->where('review.book_id', '=', "{$id}")
+            ->orderByRaw("review.review_date {$order}")
+            ;
         return $books;
     }
 

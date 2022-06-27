@@ -13,7 +13,9 @@ class User extends Authenticatable
 
     public $timestamps = false;
     protected $table = 'user';
-
+    public function order(){
+        $this->hasMany(Order::class);
+    }
     /**
      * The attributes that are mass assignable.
      *

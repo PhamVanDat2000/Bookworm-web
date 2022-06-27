@@ -102,6 +102,7 @@ class BookRepository extends BaseRepository
 		->where('book.id', '=', "{$id}")
 		;
 	}
+
 	public function getFinalPrice()
 	{
 		return Book::select(

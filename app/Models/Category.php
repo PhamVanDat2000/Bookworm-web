@@ -10,6 +10,8 @@ class Category extends Model
     use HasFactory;
 
     public $timestamps = false;
-
     protected $table = 'category';
+    public function books(){
+        $this->hasMany(Book::class);
+    }
 }
