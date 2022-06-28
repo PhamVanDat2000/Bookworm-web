@@ -18,29 +18,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+	return $request->user();
 });
 
 // home
-Route::get('/top-books-discount', [HomeController::class, 'getTopBooksDiscount'])->name('topBookDiscount');
-Route::get('/top-books-recommended', [HomeController::class, 'getTopBooksRecommended']);
-Route::get('/get-books-popularity', [HomeController::class, 'getTopBooksPopular']);
-Route::get('/get-final-price', [HomeController::class, 'getFinalPrice']);
+Route::prefix('home')->group(function () {
+	Route::get('top-books-discount', [HomeController::class, 'getTopBooksDiscount'])->name('topBookDiscount');
+	Route::get('top-books-recommended', [HomeController::class, 'getTopBooksRecommended']);
+	Route::get('get-books-popularity', [HomeController::class, 'getTopBooksPopular']);
+	Route::get('get-final-price', [HomeController::class, 'getFinalPrice']);
+});
 
 // shop
-Route::get('/sort-by-on-sale', [ShopController::class, 'sortByOnSale']);
-Route::get('/sort-by-on-popularity', [ShopController::class, 'sortByPopularity']);
-Route::get('/sort-by-on-price', [ShopController::class, 'sortByPrice']);
-
-Route::get('/filter-by-category/{id}', [ShopController::class, 'filterByCategory']);
-Route::get('/filter-by-author/{id}', [ShopController::class, 'filterByAuthor']);
-Route::get('/filter-by-star', [ShopController::class, 'filterByStar']);
+Route::prefix('shop')->group(function () {
+	Route::get('/sort-by-on-sale', [ShopController::class, 'sortByOnSale']);
+	Route::get('/sort-by-on-popularity', [ShopController::class, 'sortByPopularity']);
+	Route::get('/sort-by-on-price', [ShopController::class, 'sortByPrice']);
+	Route::get('/filter-by-category/{id}', [ShopController::class, 'filterByCategory']);
+	Route::get('/filter-by-author/{id}', [ShopController::class, 'filterByAuthor']);
+	Route::get('/filter-by-star', [ShopController::class, 'filterByStar']);
+	Route::get('get-book-by-id', [ShopController::class, 'getBookById']);
+});
 
 // product
-Route::get('/sort-review-by-date', [ProductController::class, 'sortReviewByDate']);
-Route::get('/get-book-by-id', [ShopController::class, 'getBookById']);
-
-Route::post('/make-order', [ProductController::class, 'makeOrder']);
-
-
-
+Route::prefix('product')->group(function () {
+	Route::get('/sort-review-by-date', [ProductController::class, 'sortReviewByDate']);
+	Route::get('/get-book-by-id', [ShopController::class, 'getBookById']);
+	Route::post('/make-order', [ProductController::class, 'makeOrder']);
+	Route::post('/create-review', [ProductController::class, 'createReview']);
+});

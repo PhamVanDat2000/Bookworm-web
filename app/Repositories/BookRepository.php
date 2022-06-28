@@ -72,10 +72,9 @@ class BookRepository extends BaseRepository
 			->join('discount', function ($join) {
 				$join->on('discount.book_id', '=', 'book.id')
 					->whereRaw('now() >= discount.discount_start_date')
-					->whereRaw('(now() <= discount.discount_end_date')
-					->orwhereRaw('discount.discount_end_date is null)');
+					->whereRaw('(now() <= discount.discount_end_date or discount.discount_end_date is null)');
 			})
-			->orderByRaw('book.book_price-discount.discount_price DESC, discount.discount_price ASC');;
+			->orderByRaw('book.book_price-discount.discount_price DESC, discount.discount_price ASC');
 		return $books;
 	}
 
@@ -90,17 +89,18 @@ class BookRepository extends BaseRepository
 			->orderByRaw('total_review desc, final_price_table.final_price asc');
 	}
 
-	public function sortByPrice($order){
+	public function sortByPrice($order)
+	{
 		$_getFinalPrice = $this->getFinalPrice();
 		return $_getFinalPrice->orderByRaw("final_price {$order}");
 	}
 
-	public function getBookById($id){
+	public function getBookById($id)
+	{
 		return Book::query()->select('book.*', 'author.author_name', 'discount.discount_price')
-		->leftjoin('author', 'author.id', '=', 'book.author_id')
-		->leftjoin('discount', 'discount.book_id', '=', 'book.id')
-		->where('book.id', '=', "{$id}")
-		;
+			->leftjoin('author', 'author.id', '=', 'book.author_id')
+			->leftjoin('discount', 'discount.book_id', '=', 'book.id')
+			->where('book.id', '=', "{$id}");
 	}
 
 	public function getFinalPrice()
@@ -115,8 +115,6 @@ class BookRepository extends BaseRepository
 		)
 			->leftjoin('discount', 'book.id', 'discount.book_id');
 	}
-
-
 
 	public function create($data)
 	{

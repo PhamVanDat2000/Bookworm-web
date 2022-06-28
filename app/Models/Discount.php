@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Discount extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    public $timestamps = false;
-    protected $table = 'discount';
-
-    public function book()
-    {
-        return $this->hasOne(Book::class);
-    }
+	public $timestamps = false;
+	protected $table = 'discount';
+	public function book()
+	{
+		return $this->hasOne(Book::class);
+	}
 }

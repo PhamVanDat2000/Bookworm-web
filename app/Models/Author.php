@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    public $timestamps = false;
-    protected $table = 'author';
-    public function books(){
-        $this->hasMany(Book::class);
-}
+	public $timestamps = false;
+	protected $table = 'author';
+	public function books()
+	{
+		$this->hasMany(Book::class);
+	}
 }

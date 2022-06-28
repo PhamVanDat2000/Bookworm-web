@@ -2,22 +2,27 @@
 
 namespace App\Repositories;
 
-use App\Models\Author;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
-class AuthorRepository extends BaseRepository
+class OrderRepository extends BaseRepository
 {
 	protected $query;
+
 	public function __construct()
 	{
-		$this->query = Author::query();
+		$this->query = Order::query();
 	}
-	public function filterByAuthor($id)
+
+	public function makeOrder(Request $request)
 	{
-		$books = $this->query->select('author.id', 'author.author_name', 'book.id as book_id')
-			->leftjoin('book', 'author.id', '=', 'book.author_id')
-			->where('author.id', '=', "{$id}")
-			->orderByRaw('book.book_title asc');;
-		return $books;
+		$_order = Order::create(['order_date' => Carbon::now('Asia/Ho_Chi_Minh'), ...$request->all()]);
+		foreach ($request['products'] as $product) {
+			$_orderItem = OrderItem::create([...$product, 'order_id' => $_order->id]);
+		}
+		return $_order;
 	}
 
 	public function create($data)
