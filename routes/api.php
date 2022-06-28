@@ -23,27 +23,40 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // home
 Route::prefix('home')->group(function () {
-	Route::get('top-books-discount', [HomeController::class, 'getTopBooksDiscount'])->name('topBookDiscount');
-	Route::get('top-books-recommended', [HomeController::class, 'getTopBooksRecommended']);
-	Route::get('get-books-popularity', [HomeController::class, 'getTopBooksPopular']);
-	Route::get('get-final-price', [HomeController::class, 'getFinalPrice']);
+	Route::get('top-books-discount', [HomeController::class, 'getTopBooksDiscount'])
+		->name('getTopBooksDiscount');
+	Route::get('top-books-recommended', [HomeController::class, 'getTopBooksRecommended'])
+		->name('getTopBooksRecommended');
+	Route::get('get-books-popularity', [HomeController::class, 'getTopBooksPopular'])
+		->name('getTopBooksPopular');
 });
 
 // shop
 Route::prefix('shop')->group(function () {
-	Route::get('/sort-by-on-sale', [ShopController::class, 'sortByOnSale']);
-	Route::get('/sort-by-on-popularity', [ShopController::class, 'sortByPopularity']);
-	Route::get('/sort-by-on-price', [ShopController::class, 'sortByPrice']);
-	Route::get('/filter-by-category/{id}', [ShopController::class, 'filterByCategory']);
-	Route::get('/filter-by-author/{id}', [ShopController::class, 'filterByAuthor']);
-	Route::get('/filter-by-star', [ShopController::class, 'filterByStar']);
-	Route::get('get-book-by-id', [ShopController::class, 'getBookById']);
+	Route::get('sort-by-on-sale', [ShopController::class, 'sortByOnSale'])
+		->name('sortByOnSale');
+	Route::get('sort-by-on-popularity', [ShopController::class, 'sortByPopularity'])
+		->name('sortByPopularity');
+	Route::get('sort-by-on-price', [ShopController::class, 'sortByPrice'])
+		->name('sortByPrice');
+	Route::get('filter-by-category', [ShopController::class, 'filterByCategory'])
+		->name('filterByCategory');
+	Route::get('filter-by-author', [ShopController::class, 'filterByAuthor'])
+		->name('filterByAuthor');
+	Route::get('filter-by-star', [ShopController::class, 'filterByStar'])
+		->name('filterByStar');
+	Route::get('get-book-by-id', [ShopController::class, 'getBookById'])
+		->name('getBookById');
 });
 
 // product
 Route::prefix('product')->group(function () {
-	Route::get('/sort-review-by-date', [ProductController::class, 'sortReviewByDate']);
-	Route::get('/get-book-by-id', [ShopController::class, 'getBookById']);
-	Route::post('/make-order', [ProductController::class, 'makeOrder']);
-	Route::post('/create-review', [ProductController::class, 'createReview']);
+	Route::get('sort-review-by-date', [ProductController::class, 'sortReviewByDate'])
+		->name('sortReviewByDate');
+	Route::get('get-book-by-id', [ShopController::class, 'getBookById'])
+		->name('getBookById');
+	Route::post('make-order', [ProductController::class, 'makeOrder'])
+		->name('makeOrder');
+	Route::post('create-review', [ProductController::class, 'createReview'])
+		->name('createReview');
 });

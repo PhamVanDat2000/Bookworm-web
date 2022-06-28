@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use App\Repositories\BookRepository;
 use Illuminate\Http\Request;
 
@@ -13,20 +14,16 @@ class HomeController extends Controller
 		$this->_bookRepository = $bookRepository;
 	}
 
-	public function getTopBooksDiscount(Request $request)
+	public function getTopBooksDiscount(BookRequest $request)
 	{
 		return response($this->_bookRepository->getTopBooksDiscount()->limit($request->input('total'))->get());
 	}
-	public function getTopBooksRecommended(Request $request)
+	public function getTopBooksRecommended(BookRequest $request)
 	{
 		return response($this->_bookRepository->getTopBooksRecommended()->limit($request->input('total'))->get());
 	}
-	public function getTopBooksPopular(Request $request)
+	public function getTopBooksPopular(BookRequest $request)
 	{
 		return response($this->_bookRepository->getTopBooksPopular()->limit($request->input('total'))->get());
-	}
-	public function getFinalPrice()
-	{
-		return response($this->_bookRepository->getFinalPrice()->get());
 	}
 }

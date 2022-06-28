@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Carbon\Carbon;
@@ -16,11 +17,11 @@ class OrderRepository extends BaseRepository
 		$this->query = Order::query();
 	}
 
-	public function makeOrder(Request $request)
+	public function makeOrder(OrderRequest $request)
 	{
-		$_order = Order::create(['order_date' => Carbon::now('Asia/Ho_Chi_Minh'), ...$request->all()]);
+		$_order = Order::create(['order_date' => Carbon::now(), ...$request->all()]);
 		foreach ($request['products'] as $product) {
-			$_orderItem = OrderItem::create([...$product, 'order_id' => $_order->id]);
+			OrderItem::create([...$product, 'order_id' => $_order->id]);
 		}
 		return $_order;
 	}

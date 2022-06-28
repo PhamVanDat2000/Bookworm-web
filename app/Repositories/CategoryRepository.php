@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 
 class CategoryRepository extends BaseRepository
@@ -11,13 +12,13 @@ class CategoryRepository extends BaseRepository
 	{
 		$this->query = Category::query();
 	}
-	public function filterByCategory($id)
+	public function filterByCategory(CategoryRequest $request)
 	{
-		$books = $this->query->select('category.id', 'category.category_name', 'book.id as book_id', 'book.book_title')
+		$_books = $this->query->select('category.id', 'category.category_name', 'book.id as book_id', 'book.book_title')
 			->leftjoin('book', 'category.id', '=', 'book.category_id')
-			->where('category.id', '=', "{$id}")
+			->where('category.id', '=', "{$request->input('id')}")
 			->orderByRaw('book.book_title asc');
-		return $books;
+		return $_books;
 	}
 
 	public function create($data)

@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\AuthorRequest;
 use App\Models\Author;
 
 class AuthorRepository extends BaseRepository
@@ -11,13 +12,13 @@ class AuthorRepository extends BaseRepository
 	{
 		$this->query = Author::query();
 	}
-	public function filterByAuthor($id)
+	public function filterByAuthor(AuthorRequest $request)
 	{
-		$books = $this->query->select('author.id', 'author.author_name', 'book.id as book_id')
+		$_books = $this->query->select('author.id', 'author.author_name', 'book.id as book_id')
 			->leftjoin('book', 'author.id', '=', 'book.author_id')
-			->where('author.id', '=', "{$id}")
+			->where('author.id', '=', "{$request->input('id')}")
 			->orderByRaw('book.book_title asc');;
-		return $books;
+		return $_books;
 	}
 
 	public function create($data)

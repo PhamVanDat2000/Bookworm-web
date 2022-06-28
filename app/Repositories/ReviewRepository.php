@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\ReviewRequest;
 use App\Models\Review;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -15,27 +16,27 @@ class ReviewRepository extends BaseRepository
 		$this->query = Review::query();
 	}
 
-	public function filterByStar($filterStar)
+	public function filterByStar(ReviewRequest $request)
 	{
-		$books = $this->query->select('book.id', 'book.book_title')
+		$_books = $this->query->select('book.id', 'book.book_title')
 			->rightjoin('book', 'book.id', '=', 'review.book_id')
 			->groupBy('book.id', 'book.book_title')
-			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$filterStar}")
+			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$request->input('rating_start')}")
 			->orderByRaw('book.book_title asc');
-		return $books;
+		return $_books;
 	}
 
-	public function sortReview($id, $order)
+	public function sortReviewByDate(ReviewRequest $request)
 	{
-		$books = $this->query->selectRaw('review.*')
-			->where('review.book_id', '=', "{$id}")
-			->orderByRaw("review.review_date {$order}");
-		return $books;
+		$_books = $this->query->selectRaw('review.*')
+			->where('review.book_id', '=', "{$request->input('book_id')}")
+			->orderByRaw("review.review_date {$request->input('order')}");
+		return $_books;
 	}
 
-	public function createReview($req)
+	public function createReview(ReviewRequest $reqest)
 	{
-		$_review = Review::create(['review_date' => Carbon::now(), ...$req->all()]);
+		$_review = Review::create(['review_date' => Carbon::now(), ...$reqest->all()]);
 		return $_review;
 	}
 	public function create($data)

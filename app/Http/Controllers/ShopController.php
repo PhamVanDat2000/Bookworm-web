@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthorRequest;
+use App\Http\Requests\BookRequest;
+use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\ReviewRequest;
 use App\Repositories\AuthorRepository;
 use App\Repositories\BookRepository;
 use App\Repositories\CategoryRepository;
@@ -24,30 +28,30 @@ class ShopController extends Controller
 	}
 	public function sortByOnSale(Request $request)
 	{
-		return response($this->_bookRepository->sortByOnSale()->paginate($request->input('number')));
+		return response($this->_bookRepository->sortByOnSale()->paginate($request->input('per_page')));
 	}
 	public function sortByPopularity(Request $request)
 	{
-		return response($this->_bookRepository->sortByPopularity()->paginate($request->input('number')));
+		return response($this->_bookRepository->sortByPopularity()->paginate($request->input('per_page')));
 	}
 	public function sortByPrice(Request $request)
 	{
-		return response($this->_bookRepository->sortByPrice($request->input('order'))->paginate($request->input('number')));
+		return response($this->_bookRepository->sortByPrice($request->input('order'))->paginate($request->input('per_page')));
 	}
-	public function filterByCategory(Request $request, $id)
+	public function filterByCategory(CategoryRequest $request)
 	{
-		return response($this->_categoryRepository->filterByCategory($id)->paginate($request->input('number')));
+       return response($this->_categoryRepository->filterByCategory($request)->paginate($request->input('per_page')));
 	}
-	public function filterByAuthor(Request $request, $id)
+	public function filterByAuthor(AuthorRequest $request)
 	{
-		return response($this->_authorRepository->filterByAuthor($id)->paginate($request->input('number')));
+		return response($this->_authorRepository->filterByAuthor($request)->paginate($request->input('per_page')));
 	}
-	public function filterByStar(Request $request)
+	public function filterByStar(ReviewRequest $request)
 	{
-		return response($this->_reviewRepository->filterByStar($request->input('filterStar'))->paginate($request->input('number')));
+		return response($this->_reviewRepository->filterByStar($request)->paginate($request->input('per_page')));
 	}
-	public function getBookById(Request $request)
+	public function getBookById(BookRequest $request)
 	{
-		return response($this->_bookRepository->getBookById($request->input('id'))->get());
+		return response($this->_bookRepository->getBookById($request)->get());
 	}
 }

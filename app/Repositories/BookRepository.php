@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\BookRequest;
 use App\Models\Book;
 use App\Models\Review;
 use Illuminate\Support\Facades\DB;
@@ -17,16 +18,16 @@ class BookRepository extends BaseRepository
 	//HOME
 	public function getTopBooksDiscount()
 	{
-		$books = $this->query
+		$_books = $this->query
 			->join('discount', 'book.id', '=', 'discount.book_id')
 			->select('book.id', 'book.book_title', 'book.book_price', 'discount.discount_price')
 			->orderByRaw('book.book_price-discount.discount_price DESC');
-		return $books;
+		return $_books;
 	}
 
 	public function getTopBooksRecommended()
 	{
-		return Book::query()
+		$_book = Book::query()
 			->join('review', 'review.book_id', 'book.id')
 			->select(
 				'book.id',
@@ -40,11 +41,12 @@ class BookRepository extends BaseRepository
 			->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price')
 			->join('discount', 'book.id', 'discount.book_id')
 			->orderByRaw('avg_rating desc, final_price asc');
+		return $_book;
 	}
 
 	public function getTopBooksPopular()
 	{
-		return Book::query()
+		$_book = Book::query()
 			->join('review', 'review.book_id', 'book.id')
 			->select(
 				'book.id',
@@ -58,12 +60,13 @@ class BookRepository extends BaseRepository
 			->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price')
 			->join('discount', 'book.id', 'discount.book_id')
 			->orderByRaw('total_review desc, final_price asc');
+		return $_book;
 	}
 
 	//SHOP
 	public function sortByOnSale()
 	{
-		$books = Book::select(
+		$_books = Book::select(
 			'book.id',
 			'book.book_title',
 			'discount.discount_price',
@@ -75,7 +78,7 @@ class BookRepository extends BaseRepository
 					->whereRaw('(now() <= discount.discount_end_date or discount.discount_end_date is null)');
 			})
 			->orderByRaw('book.book_price-discount.discount_price DESC, discount.discount_price ASC');
-		return $books;
+		return $_books;
 	}
 
 	public function sortByPopularity()
@@ -95,17 +98,18 @@ class BookRepository extends BaseRepository
 		return $_getFinalPrice->orderByRaw("final_price {$order}");
 	}
 
-	public function getBookById($id)
+	public function getBookById(BookRequest $request)
 	{
-		return Book::query()->select('book.*', 'author.author_name', 'discount.discount_price')
+		$_book = Book::query()->select('book.*', 'author.author_name', 'discount.discount_price')
 			->leftjoin('author', 'author.id', '=', 'book.author_id')
 			->leftjoin('discount', 'discount.book_id', '=', 'book.id')
-			->where('book.id', '=', "{$id}");
+			->where('book.id', '=', "{$request->input('id')}");
+		return $_book;
 	}
 
 	public function getFinalPrice()
 	{
-		return Book::select(
+		$_book = Book::select(
 			'book.id',
 			'book.book_title',
 			DB::raw('case
@@ -114,6 +118,7 @@ class BookRepository extends BaseRepository
                 end as final_price')
 		)
 			->leftjoin('discount', 'book.id', 'discount.book_id');
+		return $_book;
 	}
 
 	public function create($data)
