@@ -5,7 +5,7 @@ export default function CardItem(props) {
 	const { book } = props
 	return (
 		<Card>
-			<Card.Img variant="top" src={book.imgUrl} className='card-img' />
+			<Card.Img variant="top" src={book.imgUrl}/>
 			<Card.Body>
 				<Card.Title>{book.title}</Card.Title>
 				<Card.Text>
@@ -13,7 +13,7 @@ export default function CardItem(props) {
 				</Card.Text>
 			</Card.Body>
 			<Card.Body className='card-price-book'>
-				<Card.Text style={{ 'text-decoration': 'line-through' }}>${book.price}</Card.Text>
+				<Card.Text style={{ 'textDecoration': 'line-through' }}>${book.price}</Card.Text>
 				<Card.Text>${book.discount_price}</Card.Text>
 			</Card.Body>
 		</Card>

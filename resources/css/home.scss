@@ -1,0 +1,70 @@
+.carousel-book {
+    display: flex;
+    justify-content: space-around;
+    .react-multi-carousel-item {
+        display: flex;
+        justify-content: center;
+    }
+}
+.container-onsale-title {
+    margin-top: 24px;
+    padding: 16px 0;
+    .onsale-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        h1 {
+            font-size: 28px;
+        }
+    }
+    .btn-primary {
+        background: #5e5df0;
+        border-radius: 100px;
+        box-shadow: #5e5df0 0 10px 20px -10px;
+        color: #ffffff;
+        font-size: 16px;
+        border: none;
+        font-weight: 700;
+        padding: 8px 18px;
+    }
+}
+.container-carousel {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px 30px;
+    width: 100%;
+}
+.container-featured {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        margin: auto;
+        font-size: 28px;
+    }
+    .filter-featured-book {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        h2 {
+			text-align: center;
+            border-radius: 10px;
+			width: 190px;
+            padding: 16px 28px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            &:hover {
+                background-color: #8ee4af;
+            }
+        }
+        .featured-active {
+            background-color: #5cdb95;
+            color: #ffffff;
+        }
+    }
+}
+.col-item{
+	display: flex;
+	justify-content: center;
+}

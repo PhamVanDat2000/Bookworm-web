@@ -74,8 +74,11 @@ class BookRepository extends BaseRepository
 		)
 			->join('discount', function ($join) {
 				$join->on('discount.book_id', '=', 'book.id')
-					->whereRaw('now() >= discount.discount_start_date')
-					->whereRaw('(now() <= discount.discount_end_date or discount.discount_end_date is null)');
+					->where('discount.discount_start_date', '<=', today())
+					->where(function ($query) {
+						$query->where('discount.discount_end_date', '>=', today())
+							->orwhereNull('discount.discount_end_date');
+					});
 			})
 			->orderByRaw('book.book_price-discount.discount_price DESC, discount.discount_price ASC');
 		return $_books;

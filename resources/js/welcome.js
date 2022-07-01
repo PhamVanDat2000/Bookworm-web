@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 import '../css/app.css';
+import Home from './pages/home/Home';
+import Shop from './pages/shop/Shop';
 
 class Welcome extends Component {
     render() {
         return (
-            <main>
-                <section className="content">
-                    <div className="small-welcome-text">AMA</div>
-                    <div className="welcome-text">
-                        Welcome to <span>B</span>ook <span>W</span>orm
-                    </div>
-                </section>
-            </main>
+			<div>
+				{/* <Home/> */}
+				<Shop/>
+			</div>
         );
     }
 }

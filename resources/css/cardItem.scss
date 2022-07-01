@@ -1,0 +1,27 @@
+.card {
+    width: 16rem;
+    height: 24rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    .card-img-top {
+        width: 100%;
+		height: 28vw;
+		// height: auto;
+		display: block;
+		margin: 0 auto;
+        object-fit: cover;
+    }
+    .card-body {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .card-price-book {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
