@@ -1,0 +1,26 @@
+.shop-container {
+    margin-top: 24px;
+    .block-filter {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #b4b4b4;
+        border-radius: 4px;
+        h1 {
+            font-size: 16px;
+        }
+        li {
+            list-style: none;
+            cursor: pointer;
+        }
+    }
+    .sort-select {
+        width: 180px;
+		margin-right: 10px;
+    }
+	.filter-number-select{
+        width: 112px;
+	}
+	.sorting-container{
+		margin-bottom: 10px;
+	}
+}
