@@ -1,0 +1,11 @@
+import React from 'react'
+
+export default function Footer() {
+  return (
+	<div className='footer-container d-flex flex-column'>
+		<h1>BookWorm</h1>
+		<h5>Address: Tp HCM</h5>
+		<h5>Phone numeber: 09876542345</h5>
+	</div>
+  )
+}
