@@ -1,0 +1,12 @@
+.about-container{
+	min-height: calc(100vh - 56gitgit spx);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.sub-about-container{
+	margin-top: 24px;
+	h5{
+		font-weight: 400;
+	}
+}

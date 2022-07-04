@@ -17,4 +17,10 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-//Route::get('/top10books  ', [\App\Http\Controllers\HomeController::class, 'top10BookDiscount']);
+Route::get('/about', function () {
+    return view('welcome');
+});
+
+Route::get('/shop', function () {
+    return view('welcome');
+});

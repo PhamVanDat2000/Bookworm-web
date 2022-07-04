@@ -24,6 +24,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
-        "react-multi-carousel": "^2.8.2"
+        "react-multi-carousel": "^2.8.2",
+        "react-router-dom": "^6.3.0"
     }
 }
