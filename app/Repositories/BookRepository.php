@@ -19,8 +19,9 @@ class BookRepository extends BaseRepository
 	public function getTopBooksDiscount()
 	{
 		$_books = $this->query
+			->select('book.id', 'book.book_title', 'book.book_cover_photo', 'author.author_name', 'book.book_price', 'discount.discount_price')
 			->join('discount', 'book.id', '=', 'discount.book_id')
-			->select('book.id', 'book.book_title', 'book.book_price', 'discount.discount_price')
+			->leftjoin('author', 'author.id', '=', 'book.author_id')
 			->orderByRaw('book.book_price-discount.discount_price DESC');
 		return $_books;
 	}
@@ -28,18 +29,23 @@ class BookRepository extends BaseRepository
 	public function getTopBooksRecommended()
 	{
 		$_book = Book::query()
-			->join('review', 'review.book_id', 'book.id')
 			->select(
 				'book.id',
 				'book.book_title',
+				'book.book_price',
+				'book.book_cover_photo',
+				'discount.discount_price',
+				'author.author_name',
 				DB::raw('AVG(review.rating_start) as avg_rating'),
 				DB::raw('case
-                                when now() >= discount.discount_start_date and (now() <=discount.discount_end_date or discount.discount_end_date is null) then discount.discount_price
-                                else book.book_price
-                            end as final_price')
+							when now() >= discount.discount_start_date and (now() <=discount.discount_end_date or discount.discount_end_date is null) then discount.discount_price
+							else book.book_price
+						end as final_price')
 			)
-			->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price')
+			->join('review', 'review.book_id', 'book.id')
+			->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price', 'author.author_name')
 			->join('discount', 'book.id', 'discount.book_id')
+			->leftjoin('author', 'author.id', '=', 'book.author_id')
 			->orderByRaw('avg_rating desc, final_price asc');
 		return $_book;
 	}
@@ -51,14 +57,19 @@ class BookRepository extends BaseRepository
 			->select(
 				'book.id',
 				'book.book_title',
+				'book.book_price',
+				'book.book_cover_photo',
+				'discount.discount_price',
+				'author.author_name',
 				DB::raw('count(review.review_title) as total_review'),
 				DB::raw('case
                                 when now() >= discount.discount_start_date and (now() <=discount.discount_end_date or discount.discount_end_date is null) then discount.discount_price
                                 else book.book_price
                             end as final_price')
 			)
-			->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price')
+			->groupBy('book.id', 'discount.discount_start_date', 'discount.discount_end_date', 'discount.discount_price', 'author.author_name')
 			->join('discount', 'book.id', 'discount.book_id')
+			->leftjoin('author', 'author.id', '=', 'book.author_id')
 			->orderByRaw('total_review desc, final_price asc');
 		return $_book;
 	}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CardItem from '../../components/cardItem/CardItem';
 import NavBar from '../../components/navBar/NavBar';
 import Footer from '../../components/footer/Footer';
@@ -8,7 +8,36 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import homeApi from '../../../api/homeApi';
 function Home() {
+	const [topBookDiscount, setTopBookDiscount] = useState([])
+	const [topBookRecommended, setTopBookRecommended] = useState([])
+	const [topBookPopularity, setTopBookPopularity] = useState([])
+	const [featured, setFeatured] = useState('recommended')
+	useEffect(() => {
+		const bookDiscount = async () => {
+			const params = { total: 10 };
+			const data = await homeApi.getBookDiscount(params)
+			console.log('Fetch book discount successfully: ', data);
+			setTopBookDiscount(data)
+		}
+		const bookRecommended = async () => {
+			const params = { total: 8 };
+			const data = await homeApi.getBookRecommended(params)
+			console.log('Fetch book recommended successfully: ', data);
+			setTopBookRecommended(data)
+		}
+		const bookPopularity = async () => {
+			const params = { total: 8 };
+			const data = await homeApi.getBookPopularity(params)
+			console.log('Fetch book popularity successfully: ', data);
+			setTopBookPopularity(data)
+		}
+		bookDiscount()
+		bookRecommended()
+		bookPopularity()
+
+	}, [])
 	const responsive = {
 		superLargeDesktop: {
 			// the naming can be any, depends on you.
@@ -28,76 +57,7 @@ function Home() {
 			items: 1
 		}
 	};
-	const book = [{
-		title: "The Fault in Our Stars",
-		author: "John Green",
-		imgUrl: "http://docsachcungcon.com/wp-content/uploads/2020/03/The-Fault-in-Our-Stars-cover-book-1.jpg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "Don Quixote ( Đôn Ki-hô-tê)",
-		author: "Miguel de Cervantes",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-donkihote.jpg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "A Tale of Two Cities",
-		author: "Charles Dickens",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-A-Tale-of-Two-Cities.jpg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "The Fault in Our Stars",
-		author: "John Green",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-The-Lord-of-the-Rings.jpeg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "The Little Prince",
-		author: "Antoine de Saint-Exupéry",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-The-Little-Prince.jpeg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "A Tale of Two Cities",
-		author: "Charles Dickens",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-A-Tale-of-Two-Cities.jpg",
-		price: 12000,
-		discount_price: 11000,
-	}, {
-		title: "The Fault in Our Stars",
-		author: "John Green",
-		imgUrl: "http://docsachcungcon.com/wp-content/uploads/2020/03/The-Fault-in-Our-Stars-cover-book-1.jpg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "Don Quixote ( Đôn Ki-hô-tê)",
-		author: "Miguel de Cervantes",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-donkihote.jpg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "A Tale of Two Cities",
-		author: "Charles Dickens",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-A-Tale-of-Two-Cities.jpg",
-		price: 12000,
-		discount_price: 11000,
-	},
-	{
-		title: "A Tale of Two Cities",
-		author: "Charles Dickens",
-		imgUrl: "https://www.reader.com.vn/uploads/images/sach-ban-chay-nhat-moi-thoi-dai-A-Tale-of-Two-Cities.jpg",
-		price: 12000,
-		discount_price: 11000,
-	}
-	]
+
 	return (
 		<div>
 			<NavBar />
@@ -109,7 +69,7 @@ function Home() {
 			</Container>
 			<Container className='container-carousel'>
 				<Carousel responsive={responsive} infinite={true} className='carousel-book'>
-					{book.map((ele, idx) => {
+					{topBookDiscount.map((ele, idx) => {
 						return (
 							<CardItem book={ele} key={idx} />
 						)
@@ -119,22 +79,25 @@ function Home() {
 			<Container className='container-featured'>
 				<h1>Featured Books</h1>
 				<div className="filter-featured-book">
-					<h2 className='featured-active'>Recommended</h2>
-					<h2>Popular</h2>
+					<h2 className={featured == 'recommended' ? 'featured-active' : ''} onClick={() => setFeatured('recommended')}>Recommended</h2>
+					<h2 className={featured == 'populary' ? 'featured-active' : ''} onClick={() => setFeatured('populary')}>Popular</h2>
 				</div>
 			</Container>
 			<Container>
 				<Row xs={1} md={2} lg={4} className='g-4'>
-					{book.map((ele, idx) => {
-						return (
-							<Col key={idx} className='col-item'>
-								<CardItem book={ele} />
-							</Col>
-						)
-					})}
+					{
+						(featured === 'recommended' ? topBookRecommended : topBookPopularity).map((ele, idx) => {
+							return (
+								<Col key={idx} className='col-item'>
+									<CardItem book={ele} />
+								</Col>
+							)
+						})
+
+					}
 				</Row>
 			</Container>
-			<Footer/>
+			<Footer />
 		</div>
 	)
 }
