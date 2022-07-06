@@ -26,7 +26,10 @@ class ReviewRequest extends FormRequest
 	{
 		$rules = ['book_id' => 'required|numeric|exists:book,id|'];
 		if (request()->routeIs('filterByStar')) {
-			$rules = ['rating_start' => 'required|numeric|between:1,5'];
+			$rules = [
+				'rating_start' => 'required|numeric|between:1,5',
+				'per_page' => 'numeric'
+			];
 		} elseif (request()->routeIs('sortReview')) {
 			$rules = [
 				...$rules,

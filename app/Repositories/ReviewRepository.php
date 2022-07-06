@@ -11,19 +11,53 @@ class ReviewRepository extends BaseRepository
 {
 	protected $query;
 
-	public function __construct()
+	private BookRepository $_bookRepository;
+	public function __construct(BookRepository $bookRepository)
 	{
+		$this->_bookRepository = $bookRepository;
 		$this->query = Review::query();
 	}
 
 	public function filterByStar(ReviewRequest $request)
 	{
-		$_books = $this->query->select('book.id', 'book.book_title')
-			->rightjoin('book', 'book.id', '=', 'review.book_id')
-			->groupBy('book.id', 'book.book_title')
+		$_getFinalPrice = $this->_bookRepository->getFinalPrice();
+		$_books = $this->query
+			->rightJoinSub($_getFinalPrice, 'final_price_table', function ($join) {
+				$join->on('review.id', '=', 'final_price_table.category_id');
+			})
+			->groupBy(
+				'final_price_table.book_id',
+				'final_price_table.book_title',
+				'review.id',
+				'final_price_table.book_price',
+				'final_price_table.book_cover_photo',
+				'final_price_table.category_id',
+				'final_price_table.author_id',
+				'final_price_table.discount_price',
+				'final_price_table.author_name',
+				'final_price_table.final_price'
+			)
 			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$request->input('rating_start')}")
-			->orderByRaw('book.book_title asc');
+			->orderByRaw('final_price_table.book_title asc');
 		return $_books;
+
+
+		// $_getFinalPrice = $this->_bookRepository->getFinalPrice();
+		// $_books = DB::table(
+		// 	function ($query) use ($request) {
+		// 		$query
+		// 			->select('review.book_id', 'review.id')
+		// 			->groupBy('review.book_id', 'review.id')
+		// 			->from('review')
+		// 			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$request->input('rating_start')}");
+		// 	},
+		// 	't1'
+		// )
+		// 	->rightJoinSub($_getFinalPrice, 'final_price_table', function ($join) {
+		// 		$join->on('t1.book_id', '=', 'final_price_table.book_id');
+		// 	})
+		// 	->orderByRaw('final_price_table.book_title asc');
+		// return $_books;
 	}
 
 	public function sortReviewByDate(ReviewRequest $request)
