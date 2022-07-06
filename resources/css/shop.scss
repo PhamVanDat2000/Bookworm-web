@@ -15,12 +15,33 @@
     }
     .sort-select {
         width: 180px;
-		margin-right: 10px;
+        margin-right: 10px;
     }
-	.filter-number-select{
+    .filter-number-select {
         width: 112px;
-	}
-	.sorting-container{
-		margin-bottom: 10px;
-	}
+    }
+    .sorting-container {
+        margin-bottom: 10px;
+    }
+}
+// filterMenu
+.accordion-container {
+    margin-bottom: 10px;
+    .accordion-header {
+        color: #fff;
+        background-color: #ff854d;
+        cursor: pointer;
+    }
+    .accordion-item {
+        cursor: pointer;
+		background-color: #fff;
+        &:hover {
+            background-color: rgb(223, 219, 219);
+        }
+    }
+}
+
+//paging
+.page-link {
+    cursor: pointer;
 }

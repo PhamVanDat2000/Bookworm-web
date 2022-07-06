@@ -18,17 +18,22 @@
         }
     }
     .btn-primary {
-        background: #5e5df0;
-        border-radius: 100px;
-        box-shadow: #5e5df0 0 10px 20px -10px;
-        color: #ffffff;
-        font-size: 16px;
+        background-color: #20cccc;
         border: none;
-        font-weight: 700;
-        padding: 8px 18px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        width: 150px;
+        padding: 8px 28px;
+        margin: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+            background-color: #66ccff;
+        }
     }
 }
 .container-carousel {
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 30px 30px;
     width: 100%;
@@ -47,13 +52,15 @@
         flex-direction: row;
         justify-content: center;
         h2 {
-			text-align: center;
+            background-color: #ffffff;
+            text-align: center;
             border-radius: 10px;
-			width: 190px;
+            width: 190px;
             padding: 16px 28px;
             margin: 10px;
             font-size: 20px;
             cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             &:hover {
                 background-color: #8ee4af;
             }
@@ -64,7 +71,7 @@
         }
     }
 }
-.col-item{
-	display: flex;
-	justify-content: center;
+.col-item {
+    display: flex;
+    justify-content: center;
 }
