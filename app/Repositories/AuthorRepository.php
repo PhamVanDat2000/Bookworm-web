@@ -8,28 +8,28 @@ use App\Models\Author;
 class AuthorRepository extends BaseRepository
 {
 	protected $query;
-    private BookRepository $_bookRepository;
-    public function __construct(BookRepository $bookRepository)
-    {
-        $this->_bookRepository = $bookRepository;
+	private BookRepository $_bookRepository;
+	public function __construct(BookRepository $bookRepository)
+	{
+		$this->_bookRepository = $bookRepository;
 		$this->query = Author::query();
 	}
 	public function filterByAuthor(AuthorRequest $request)
 	{
-        $_getFinalPrice = $this->_bookRepository->getFinalPrice();
-        $_books = $this->query
-            ->leftJoinSub($_getFinalPrice, 'final_price_table',function($join){
-                $join->on('author.id', '=', 'final_price_table.author_id');
-            })
-            ->where('author.id', '=', "{$request->input('id')}")
-        ->orderByRaw('final_price_table.book_title asc');
-        return $_books;
-
+		$_getFinalPrice = $this->_bookRepository->getFinalPrice();
+		$_books = $this->query
+			->leftJoinSub($_getFinalPrice, 'final_price_table', function ($join) {
+				$join->on('author.id', '=', 'final_price_table.author_id');
+			})
+			->where('author.id', '=', "{$request->id}")
+			->orderByRaw('final_price_table.book_title asc');
+		return $_books;
 	}
-    public function getAuthorList(){
-        $_author = $this->query->select('author.id', 'author.author_name');
-        return $_author;
-    }
+	public function getAuthorList()
+	{
+		$_author = $this->query->select('author.id', 'author.author_name');
+		return $_author;
+	}
 	public function create($data)
 	{
 		// TODO: Implement create() method.

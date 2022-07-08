@@ -16,14 +16,14 @@ class HomeController extends Controller
 
 	public function getTopBooksDiscount(BookRequest $request)
 	{
-		return response($this->_bookRepository->getTopBooksDiscount()->limit($request->input('total'))->get());
+		return response($this->_bookRepository->getTopBooksDiscount()->limit($request->total)->get());
 	}
 	public function getTopBooksRecommended(BookRequest $request)
 	{
-		return response($this->_bookRepository->getTopBooksRecommended()->limit($request->input('total'))->get());
+		return response($this->_bookRepository->getTopBooksRecommended()->limit($request->total)->get());
 	}
 	public function getTopBooksPopular(BookRequest $request)
 	{
-		return response($this->_bookRepository->getTopBooksPopular()->limit($request->input('total'))->get());
+		return response($this->_bookRepository->getTopBooksPopular()->limit($request->total)->get());
 	}
 }

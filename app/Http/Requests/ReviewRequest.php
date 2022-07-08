@@ -36,7 +36,8 @@ class ReviewRequest extends FormRequest
 				'order' => [
 					'required',
 					Rule::in(['desc', 'asc'])
-				]
+				],
+				'rating_start' => 'numeric|between:1,5'
 			];
 		} elseif (request()->routeIs('createReview')) {
 			$rules = [
