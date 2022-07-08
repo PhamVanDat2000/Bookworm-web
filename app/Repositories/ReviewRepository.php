@@ -3,8 +3,10 @@
 namespace App\Repositories;
 
 use App\Http\Requests\ReviewRequest;
+use App\Models\Book;
 use App\Models\Review;
 use Carbon\Carbon;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 
 class ReviewRepository extends BaseRepository
@@ -35,43 +37,59 @@ class ReviewRepository extends BaseRepository
 				'final_price_table.author_id',
 				'final_price_table.discount_price',
 				'final_price_table.author_name',
-				'final_price_table.final_price'
+				'final_price_table.final_price',
+				'final_price_table.book_summary'
 			)
-			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$request->input('rating_start')}")
+			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$request->rating_start}")
 			->orderByRaw('final_price_table.book_title asc');
 		return $_books;
-
-
-		// $_getFinalPrice = $this->_bookRepository->getFinalPrice();
-		// $_books = DB::table(
-		// 	function ($query) use ($request) {
-		// 		$query
-		// 			->select('review.book_id', 'review.id')
-		// 			->groupBy('review.book_id', 'review.id')
-		// 			->from('review')
-		// 			->having(DB::raw('Avg(review.rating_start)'), '>=', "{$request->input('rating_start')}");
-		// 	},
-		// 	't1'
-		// )
-		// 	->rightJoinSub($_getFinalPrice, 'final_price_table', function ($join) {
-		// 		$join->on('t1.book_id', '=', 'final_price_table.book_id');
-		// 	})
-		// 	->orderByRaw('final_price_table.book_title asc');
-		// return $_books;
 	}
-
+	public function sortReviewByStar(ReviewRequest $request)
+	{
+		$_review = $this->query->selectRaw('review.*')
+			->where('review.book_id', '=', "{$request->book_id}")
+			->where('review.rating_start', '=', "{$request->rating_start}")
+			->orderByRaw("review.review_date {$request->order}");
+		return $_review;
+	}
 	public function sortReviewByDate(ReviewRequest $request)
 	{
-		$_books = $this->query->selectRaw('review.*')
-			->where('review.book_id', '=', "{$request->input('book_id')}")
-			->orderByRaw("review.review_date {$request->input('order')}");
-		return $_books;
+		$_review = $this->query->selectRaw('review.*')
+			->where('review.book_id', '=', "{$request->book_id}")
+			->orderByRaw("review.review_date {$request->order}");
+		return $_review;
 	}
 
 	public function createReview(ReviewRequest $reqest)
 	{
 		$_review = Review::create(['review_date' => Carbon::now(), ...$reqest->all()]);
 		return $_review;
+	}
+
+	public function getStar(ReviewRequest $request)
+	{
+		$_starCount = Book::query()
+			->select('id')
+			->where('id', '=', "{$request->book_id}")
+			->withCount([
+				'reviews as total_star_count',
+				'reviews as one_star_count' => function (Builder $query) {
+					$query->where('rating_start', 1);
+				},
+				'reviews as two_star_count' => function (Builder $query) {
+					$query->where('rating_start', 2);
+				},
+				'reviews as three_star_count' => function (Builder $query) {
+					$query->where('rating_start', 3);
+				},
+				'reviews as four_star_count' => function (Builder $query) {
+					$query->where('rating_start', 5);
+				},
+				'reviews as five_star_count' => function (Builder $query) {
+					$query->where('rating_start', 5);
+				},
+			]);
+		return $_starCount;
 	}
 	public function create($data)
 	{
