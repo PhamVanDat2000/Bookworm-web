@@ -16,18 +16,36 @@ function Home() {
 	const [featured, setFeatured] = useState('recommended')
 	useEffect(() => {
 		const bookDiscount = async () => {
-			const params = { total: 10 };
-			const data = await homeApi.getBookDiscount(params)
-			console.log('Fetch book discount successfully: ', data);
-			setTopBookDiscount(data)
+			try {
+
+				const params = { total: 10 };
+				const data = await homeApi.getBookDiscount(params)
+				console.log('Fetch book discount successfully: ', data);
+				setTopBookDiscount(data)
+			} catch (error) {
+
+				console.log('Failed to fetch books list: ', error)
+			}
 		}
 		const bookRecommended = async () => {
-			const params = { total: 8 };
-			const data = await homeApi.getBookRecommended(params)
-			console.log('Fetch book recommended successfully: ', data);
-			setTopBookRecommended(data)
+			try {
+				const params = { total: 8 };
+				const data = await homeApi.getBookRecommended(params)
+				console.log('Fetch book recommended successfully: ', data);
+				setTopBookRecommended(data)
+			} catch (error) {
+				console.log('Failed to fetch books list: ', error)
+			}
 		}
 		const bookPopularity = async () => {
+			try {
+				const params = { total: 8 };
+				const data = await homeApi.getBookPopularity(params)
+				console.log('Fetch book popularity successfully: ', data);
+				setTopBookPopularity(data)
+			} catch (error) {
+				console.log('Failed to fetch books list: ', error)
+			}
 			const params = { total: 8 };
 			const data = await homeApi.getBookPopularity(params)
 			console.log('Fetch book popularity successfully: ', data);
@@ -93,7 +111,6 @@ function Home() {
 								</Col>
 							)
 						})
-
 					}
 				</Row>
 			</Container>
