@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Accordion, Card } from "react-bootstrap";
+import { useDispatch } from 'react-redux';
 import shopApi from '../../../api/shopApi';
+import { setListBook } from '../../features/shop/listbookSlice';
 export default function FilterMenu(props) {
-	const { nameMenu, setBooks, setCurrentPage, setTotalPage, setParamsSortApi, paramsSortApi, setIsSort, isSort, data } = props
+	const dispatch = useDispatch()
+	const { nameMenu, setCurrentPage, setTotalPage, setParamsSortApi, paramsSortApi, setIsSort, isSort,setBookFromTo, data } = props
 	const [authorId, setAuthorId] = useState()
 	const [categoryId, setCategoryId] = useState()
 	const [star, setStar] = useState()
@@ -16,7 +19,8 @@ export default function FilterMenu(props) {
 				console.log('Fetch book filter by author successfully: ', data)
 				setTotalPage(data.last_page)
 				setCurrentPage(data.current_page)
-				setBooks(data.data)
+				dispatch(setListBook(data.data))
+				setBookFromTo({from: data.from, to:data.to, total:data.total})
 			} catch (error) {
 				console.log('Failed to fetch books list: ', error)
 			}
@@ -28,7 +32,8 @@ export default function FilterMenu(props) {
 				console.log('Fetch book filter by category successfully: ', data)
 				setTotalPage(data.last_page)
 				setCurrentPage(data.current_page)
-				setBooks(data.data)
+				dispatch(setListBook(data.data))
+				setBookFromTo({from: data.from, to:data.to, total:data.total})
 			} catch (error) {
 				console.log('Failed to fetch books list: ', error)
 			}
@@ -40,7 +45,8 @@ export default function FilterMenu(props) {
 				console.log('Fetch book filter by star successfully: ', data)
 				setTotalPage(data.last_page)
 				setCurrentPage(data.current_page)
-				setBooks(data.data)
+				dispatch(setListBook(data.data))
+				setBookFromTo({from: data.from, to:data.to, total:data.total})
 			} catch (error) {
 				console.log('Failed to fetch books list: ', error)
 			}
