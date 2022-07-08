@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use App\Http\Requests\OrderRequest;
 use App\Http\Requests\ReviewRequest;
 use App\Repositories\BookRepository;
@@ -21,20 +22,29 @@ class ProductController extends Controller
 		$this->_orderRepository = $orderRepository;
 	}
 
-	public function getBookById(Request $request)
+	public function getBookById(BookRequest $request)
 	{
-		return response($this->_bookRepository->getBookById($request->input('id'))->get());
+		return response($this->_bookRepository->getBookById($request)->get());
 	}
-	public function sortReviewByDate(ReviewRequest $request)
+	public function sortReview(ReviewRequest $request)
 	{
-		return response($this->_reviewRepository->sortReviewByDate($request)->paginate($request->input('per_page')));
+		if ($request->rating_start) {
+			return response($this->_reviewRepository->sortReviewByStar($request)->paginate($request->per_page));
+		} else {
+			return response($this->_reviewRepository->sortReviewByDate($request)->paginate($request->per_page));
+		}
+	}
+
+	public function getStar(ReviewRequest $request)
+	{
+		return response($this->_reviewRepository->getStar($request)->get());
 	}
 
 	public function makeOrder(OrderRequest $request)
 	{
 		$result = $this->_orderRepository->makeOrder($request);
 		if ($result) {
-			return ["Result" => [...($request->all()),'order_date'=>$result->order_date]];
+			return ["Result" => [...($request->all()), 'order_date' => $result->order_date]];
 		} else {
 			return ["Result" => "operation failed"];
 		}
