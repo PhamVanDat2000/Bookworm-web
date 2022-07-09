@@ -56,10 +56,6 @@ Route::prefix('product')->group(function () {
 		->name('sortReviewByDate');
 	Route::get('get-book-by-id', [ShopController::class, 'getBookById'])
 		->name('getBookById');
-	Route::post('make-order', [ProductController::class, 'makeOrder'])
-		->name('makeOrder');
-	Route::post('create-review', [ProductController::class, 'createReview'])
-		->name('createReview');
 	Route::get('get-book-by-id', [ProductController::class, 'getBookById'])
 		->name('getBookById');
 });
@@ -70,4 +66,12 @@ Route::prefix('auth')->group(function () {
 		->name('registerUser');
 	Route::post('sign-in', [AuthController::class, 'loginUser'])
 		->name('loginUser');
+});
+
+//protected route
+Route::group(['middleware' => ['auth:sanctum']], function () {
+	Route::post('make-order', [ProductController::class, 'makeOrder'])
+		->name('makeOrder');
+	Route::post('create-review', [ProductController::class, 'createReview'])
+		->name('createReview');
 });
