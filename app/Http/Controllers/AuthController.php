@@ -24,4 +24,8 @@ class AuthController extends Controller
 	{
 		return $this->_authRepository->loginUser($request);
 	}
+	public function logoutUser()
+	{
+		return $this->_authRepository->logoutUser();
+	}
 }

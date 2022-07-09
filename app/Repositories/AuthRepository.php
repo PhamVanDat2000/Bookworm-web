@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Http\Requests\AuthorRequest;
 use App\Http\Requests\AuthRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthRepository extends BaseRepository
@@ -36,12 +37,14 @@ class AuthRepository extends BaseRepository
 	{
 		$user = $this->query->where('email', '=', $request->email)->first();
 		if ($user) {
+			$token =  $user->createToken('logintoken')->plainTextToken;
 			if (Hash::check($request->password, $user->password)) {
 				return response()->json(
 					[
 						'status' => 'success',
 						'message' => 'Login successful',
-						'user' => $user
+						'user' => $user,
+						'token' => $token
 					]
 				);
 			} else {
@@ -56,6 +59,16 @@ class AuthRepository extends BaseRepository
 				'message' => 'This email is not registered'
 			]);
 		}
+	}
+	public function logoutUser()
+	{
+		Auth::user()->tokens->each(function ($token, $key) {
+			$token->delete();
+		});
+		return response()->json([
+			'status' => 'success',
+			'message' => 'Logout success'
+		]);
 	}
 	public function create($data)
 	{

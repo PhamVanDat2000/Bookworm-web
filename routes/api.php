@@ -74,4 +74,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 		->name('makeOrder');
 	Route::post('create-review', [ProductController::class, 'createReview'])
 		->name('createReview');
+	Route::post('logout', [AuthController::class, 'logoutUser'])
+		->name('logoutUser');
 });
