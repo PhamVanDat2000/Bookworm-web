@@ -9,13 +9,14 @@ import CustomerReview from '../../components/customerReview/CustomerReview';
 import productApi from '../../../api/productApi';
 import IMAGE from '../../../assets';
 import CreateReview from '../../components/createRiview/CreateReview';
+import { useParams } from 'react-router-dom';
 export default function Product() {
+	const { id } = useParams()
 	const [book, setBook] = useState({})
-	const id = 3
 	useEffect(() => {
 		const bookDetail = async () => {
 			try {
-				const param = { id: id}
+				const param = { id: id }
 				const data = await productApi.getBookDetail(param)
 				setBook(data[0])
 				console.log('success get book detail', data[0])
@@ -57,7 +58,7 @@ export default function Product() {
 								</Row>
 							</Col>
 							<Col lg={4}>
-								<CreateReview/>
+								<CreateReview />
 							</Col>
 						</Row>
 					</Col>
