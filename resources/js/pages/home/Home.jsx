@@ -9,11 +9,13 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import homeApi from '../../../api/homeApi';
+import ButtonCustom from '../../components/button/ButtonCustom';
 function Home() {
 	const [topBookDiscount, setTopBookDiscount] = useState([])
 	const [topBookRecommended, setTopBookRecommended] = useState([])
 	const [topBookPopularity, setTopBookPopularity] = useState([])
 	const [featured, setFeatured] = useState('recommended')
+
 	useEffect(() => {
 		const bookDiscount = async () => {
 			try {
@@ -46,10 +48,6 @@ function Home() {
 			} catch (error) {
 				console.log('Failed to fetch books list: ', error)
 			}
-			const params = { total: 8 };
-			const data = await homeApi.getBookPopularity(params)
-			console.log('Fetch book popularity successfully: ', data);
-			setTopBookPopularity(data)
 		}
 		bookDiscount()
 		bookRecommended()
@@ -58,7 +56,6 @@ function Home() {
 	}, [])
 	const responsive = {
 		superLargeDesktop: {
-			// the naming can be any, depends on you.
 			breakpoint: { max: 4000, min: 3000 },
 			items: 5
 		},
@@ -82,11 +79,12 @@ function Home() {
 			<Container className='container-onsale-title' >
 				<div className='onsale-title'>
 					<h1>On Sale</h1>
-					<Button variant="primary">View all</Button>
+					<span style={{width:130}}><ButtonCustom text={"View All"} /></span>
+
 				</div>
 			</Container>
 			<Container className='container-carousel'>
-				<Carousel responsive={responsive} infinite={true} className='carousel-book'>
+				<Carousel responsive={responsive} infinite={false} className='carousel-book'>
 					{topBookDiscount.map((ele, idx) => {
 						return (
 							<CardItem book={ele} key={idx} />

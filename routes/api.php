@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
@@ -33,25 +34,25 @@ Route::prefix('home')->group(function () {
 
 // shop
 Route::prefix('shop')->group(function () {
-	Route::get('sort-by-on-sale', [ShopController::class, 'sortByOnSale'])
-		->name('sortByOnSale');
-	Route::get('sort-by-on-popularity', [ShopController::class, 'sortByPopularity'])
-		->name('sortByPopularity');
-	Route::get('sort-by-on-price', [ShopController::class, 'sortByPrice'])
-		->name('sortByPrice');
+	Route::get('sort-book', [ShopController::class, 'sortBook'])
+		->name('sortBooK');
 	Route::get('filter-by-category', [ShopController::class, 'filterByCategory'])
 		->name('filterByCategory');
 	Route::get('filter-by-author', [ShopController::class, 'filterByAuthor'])
 		->name('filterByAuthor');
 	Route::get('filter-by-star', [ShopController::class, 'filterByStar'])
 		->name('filterByStar');
-	Route::get('get-book-by-id', [ShopController::class, 'getBookById'])
-		->name('getBookById');
+	Route::get('category-list', [ShopController::class, 'getCategoryList'])
+		->name('getCategoryList');
+	Route::get('author-list', [ShopController::class, 'getAuthorList'])
+		->name('getAuthorList');
 });
 
 // product
 Route::prefix('product')->group(function () {
-	Route::get('sort-review-by-date', [ProductController::class, 'sortReviewByDate'])
+	Route::get('sort-review-by-date', [ProductController::class, 'sortReview'])
+		->name('sortReviewByDate');
+	Route::get('get-star-count', [ProductController::class, 'getStar'])
 		->name('sortReviewByDate');
 	Route::get('get-book-by-id', [ShopController::class, 'getBookById'])
 		->name('getBookById');
@@ -59,4 +60,14 @@ Route::prefix('product')->group(function () {
 		->name('makeOrder');
 	Route::post('create-review', [ProductController::class, 'createReview'])
 		->name('createReview');
+	Route::get('get-book-by-id', [ProductController::class, 'getBookById'])
+		->name('getBookById');
+});
+
+// Sign In
+Route::prefix('auth')->group(function () {
+	Route::post('register', [AuthController::class, 'registerUser'])
+		->name('registerUser');
+	Route::post('sign-in', [AuthController::class, 'loginUser'])
+		->name('loginUser');
 });

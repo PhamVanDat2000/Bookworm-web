@@ -1,8 +1,18 @@
 .navbar-container {
+	.navbar-brand{
+		cursor: pointer;
+	}
     .nav-link {
-        font-weight: 700px!important;
+		margin-right: 4px;
+        font-weight: 700px !important;
+		border-radius:4px ;
         &:hover {
-            color: #3cb076 !important;
+            background-color: #3cb076 !important;
+            color: #fff !important;
         }
+    }
+    .active {
+        background-color: #3cb076 !important;
+        color: #fff !important;
     }
 }

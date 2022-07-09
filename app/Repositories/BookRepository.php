@@ -20,7 +20,7 @@ class BookRepository extends BaseRepository
 	public function getTopBooksDiscount()
 	{
 		$_books = $this->query
-			->select('book.id', 'book.book_title', 'book.book_cover_photo', 'author.author_name', 'book.book_price', 'discount.discount_price')
+			->select('book.id as book_id', 'book.book_title', 'book.book_cover_photo', 'author.author_name', 'book.book_price', 'discount.discount_price')
 			->join('discount', 'book.id', '=', 'discount.book_id')
 			->leftjoin('author', 'author.id', '=', 'book.author_id')
 			->orderByRaw('book.book_price-discount.discount_price DESC');
@@ -31,7 +31,7 @@ class BookRepository extends BaseRepository
 	{
 		$_book = Book::query()
 			->select(
-				'book.id',
+				'book.id as book_id',
 				'book.book_title',
 				'book.book_price',
 				'book.book_cover_photo',
@@ -56,7 +56,7 @@ class BookRepository extends BaseRepository
 		$_book = Book::query()
 			->join('review', 'review.book_id', 'book.id')
 			->select(
-				'book.id',
+				'book.id as book_id',
 				'book.book_title',
 				'book.book_price',
 				'book.book_cover_photo',

@@ -23,10 +23,20 @@ class AuthRequest extends FormRequest
 	 */
 	public function rules()
 	{
-		$rules = [
-			'email' => 'required|numeric|unique:users',
-			'password' => 'required',
-		];
+
+		if (Request()->routeIs('loginUser')) {
+			$rules = [
+				'email' => 'required|email',
+				'password' => 'required|string',
+			];
+		}
+		if (Request()->routeIs('registerUser')) {
+			$rules = [
+				'email' => 'required|email|unique:user',
+				'first_name' => 'required|string',
+				'last_name' => 'required|string',
+			];
+		}
 		return $rules;
 	}
 }

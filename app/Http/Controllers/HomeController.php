@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BookRequest;
+use App\Repositories\AuthRepository;
 use App\Repositories\BookRepository;
 use Illuminate\Http\Request;
 

@@ -24,38 +24,36 @@
 }
 .discount-price {
     font-size: 20px;
+    color: #ee4d2d;
 }
-.quatity-card {
-    margin: 20px 0;
-    padding: 0 10px;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    background-color: #b4b4b4;
-    border-radius: 10px;
-    span {
-        cursor: pointer;
-        font-size: 28px;
-        border-radius: 15px;
-    }
-}
+
+// add to card css
 .add-to-card {
-    border: #b4b4b4 1px solid;
-}
-.btn-add-to-card {
-    background-color: initial;
-    background-image: linear-gradient(-180deg, #00d775, #00bd68);
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-    color: #ffffff;
-    cursor: pointer;
-    height: 44px;
-    line-height: 44px;
-    width: 80%;
-    z-index: 9;
-    border: 0;
-    &:hover {
-        background: #00bd68;
+    .card-body {
+        padding:36px;
+    }
+    border: #e9e8e8 1px solid;
+    .quatity-card {
+		width: 100%;
+        margin: 20px 0;
+        padding: 4px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
+        span {
+            cursor: pointer;
+            font-size: 28px;
+            border-radius: 15px;
+        }
+        button {
+            height: 42px;
+            width: 42px;
+            background-color: #015958;
+            border: none;
+            border-radius: 50%;
+            color: #ffffff;
+        }
     }
 }
 
@@ -72,11 +70,11 @@
 // review
 .customer-review-container {
     span {
-		cursor: pointer;
+        cursor: pointer;
         margin: 0 10px 0 0;
         text-decoration: underline;
         .total {
-			font-weight: 700;
+            font-weight: 700;
         }
     }
     padding: 24px 20px;
