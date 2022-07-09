@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Welcome from './welcome';
 import '../css/custom.scss'
-import { BrowserRouter } from 'react-router-dom';
+import store from './app/store'
+import { Provider } from 'react-redux'
+
 ReactDOM.render(
-	<BrowserRouter>
+	<Provider store={store}>
 		<Welcome />
-	</BrowserRouter>,
+	</Provider>,
 	document.getElementById('root')
 );
