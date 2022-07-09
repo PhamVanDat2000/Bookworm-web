@@ -16,12 +16,20 @@ class AuthRepository extends BaseRepository
 	}
 	public function registerUser(AuthRequest $request)
 	{
-		$_user = User::create([...$request->all()]);
+		$_user = User::create([
+			...$request->all(),
+			'password' => Hash::make($request->password)
+		]);
 		if ($_user) {
-			return back()->with('success', 'Register successful');
+			return response()->json([
+				'status' => 'success',
+				'message' => 'Register successful'
+			]);
 		} else {
-
-			return back()->with('fail', 'Something wrong');
+			return response()->json([
+				'status' => 'fail',
+				'message' => 'Something wrong'
+			]);
 		}
 	}
 	public function loginUser(AuthRequest $request)
@@ -29,13 +37,24 @@ class AuthRepository extends BaseRepository
 		$user = $this->query->where('email', '=', $request->email)->first();
 		if ($user) {
 			if (Hash::check($request->password, $user->password)) {
-				$request->session()->put('loginId', $user->id);
-				return back()->with('success', 'Login successful');
+				return response()->json(
+					[
+						'status' => 'success',
+						'message' => 'Login successful',
+						'user' => $user
+					]
+				);
 			} else {
-				return back()->with('fail', 'Password not matches');
+				return response()->json([
+					'status' => 'fail',
+					'message' => 'Password not matches'
+				]);
 			}
 		} else {
-			return back()->with('fail', 'This email is not registered');
+			return response()->json([
+				'status' => 'fail',
+				'message' => 'This email is not registered'
+			]);
 		}
 	}
 	public function create($data)
