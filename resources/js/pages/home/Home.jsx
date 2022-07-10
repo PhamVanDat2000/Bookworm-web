@@ -4,7 +4,6 @@ import NavBar from '../../components/navBar/NavBar';
 import Footer from '../../components/footer/Footer';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
