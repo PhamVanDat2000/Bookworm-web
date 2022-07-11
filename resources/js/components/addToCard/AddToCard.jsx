@@ -29,8 +29,23 @@ export default function AddToCart(props) {
 			final_price: book.final_price,
 			quantity: quantity
 		}
-		allEntries.push(data);
-		localStorage.setItem('cart', JSON.stringify(allEntries))
+		var flag = false
+		const newData = allEntries.map((ele, idx) => {
+			if (ele.book_id == data.book_id) {
+				flag = true
+				if (ele.quantity + data.quantity > 8) {
+					return { ...ele, quantity: 8 }
+				}
+				else {
+					return { ...ele, quantity: ele.quantity + data.quantity }
+				}
+			}
+			return ele
+		})
+		if (flag === false) {
+			newData.push(data);
+		}
+		localStorage.setItem('cart', JSON.stringify(newData))
 	}
 	return (
 		<Card className='add-to-card'>

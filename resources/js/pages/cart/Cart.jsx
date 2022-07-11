@@ -16,11 +16,8 @@ export default function Cart() {
 	const [cartData, setCartData] = useState(allEntries)
 	const handleAddQuantity = (id, quantity) => {
 		if (quantity < 8) {
-			var flag = false
 			const newData = allEntries.map((ele, idx) => {
 				if (ele.book_id == id) {
-					flag = true
-					console.log(flag)
 					return { ...ele, quantity: quantity + 1 }
 				}
 				return ele
@@ -33,13 +30,19 @@ export default function Cart() {
 	}
 	const handleMinusQuantity = (id, quantity) => {
 		if (quantity > 1) {
-			var flag = false
 			const newData = allEntries.map((ele, idx) => {
 				if (ele.book_id == id) {
-					flag = true
 					return { ...ele, quantity: quantity - 1 }
 				}
 				return ele
+			})
+			localStorage.setItem('cart', JSON.stringify(newData))
+			allEntries = JSON.parse(localStorage.getItem('cart')) || [];
+			setCartData(allEntries)
+		}
+		else {
+			const newData = allEntries.filter((ele, idx) => {
+				return ele.book_id !== id
 			})
 			localStorage.setItem('cart', JSON.stringify(newData))
 			allEntries = JSON.parse(localStorage.getItem('cart')) || [];
@@ -80,7 +83,7 @@ export default function Cart() {
 		<>
 			<NavBar />
 			<Container className='cart-container'>
-				<SignIn styles={{display:'none'}} show={show}/>
+				<SignIn styles={{ display: 'none' }} show={show} />
 				<Row xs={1} lg={2} className='mb-3'>
 					<Col lg={8} className="mt-2">
 						<Card>
