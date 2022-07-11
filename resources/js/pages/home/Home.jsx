@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import homeApi from '../../../api/homeApi';
 import ButtonCustom from '../../components/button/ButtonCustom';
+import { useNavigate } from 'react-router-dom';
 function Home() {
 	const [topBookDiscount, setTopBookDiscount] = useState([])
 	const [topBookRecommended, setTopBookRecommended] = useState([])
@@ -59,31 +60,35 @@ function Home() {
 			items: 5
 		},
 		desktop: {
-			breakpoint: { max: 3000, min: 1024 },
+			breakpoint: { max: 3000, min: 1224 },
 			items: 4
 		},
 		tablet: {
-			breakpoint: { max: 1024, min: 800 },
-			items: 2
+			breakpoint: { max: 1224, min: 990 },
+			items: 3
 		},
 		mobile: {
-			breakpoint: { max: 800, min: 0 },
+			breakpoint: { max: 990, min: 767 },
+			items: 2
+		},
+		smallmobile: {
+			breakpoint: { max: 767, min: 0 },
 			items: 1
 		}
 	};
-
+	const navigate = useNavigate()
 	return (
 		<div>
 			<NavBar />
 			<Container className='container-onsale-title' >
 				<div className='onsale-title'>
 					<h1>On Sale</h1>
-					<span style={{width:130}}><ButtonCustom text={"View All"} /></span>
+					<span onClick={()=>navigate('/shop')} style={{ width: 130 }}><ButtonCustom text={"View All"} /></span>
 
 				</div>
 			</Container>
 			<Container className='container-carousel'>
-				<Carousel responsive={responsive} infinite={false} className='carousel-book'>
+				<Carousel responsive={responsive} infinite={true} className='carousel-book'>
 					{topBookDiscount.map((ele, idx) => {
 						return (
 							<CardItem book={ele} key={idx} />

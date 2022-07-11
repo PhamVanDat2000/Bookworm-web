@@ -21,10 +21,14 @@ export default function SignIn(props) {
 
 	const login = async () => {
 		try {
-			const data = await authApi.loginApi(dataLogin)
-			console.log('login successfully: ', data);
-			localStorage.setItem('logintoken', data.token)
-			// setTopBookDiscount(data)
+			const res = await authApi.loginApi(dataLogin)
+			console.log('login successfully: ', res.status);
+			if (res.status = 200) {
+				localStorage.setItem('userLogin', JSON.stringify(res.data))
+				localStorage.setItem('isLogin', true)
+				setModalShow(false)
+				window.location.reload()
+			}
 		} catch (error) {
 			console.log('Failed to login: ', error)
 		}
@@ -33,17 +37,16 @@ export default function SignIn(props) {
 		try {
 			const data = await authApi.registerApi(dataRegister)
 			console.log('register successfully: ', data);
+			setModalShow(false)
 		} catch (error) {
 			console.log('Failed to register: ', error)
 		}
 	}
 
 	const handleSubmitLogin = (e) => {
-		// e.preventDefault()
 		login()
 	}
 	const handleSubmitRegister = (e) => {
-		// e.preventDefault()
 		register()
 	}
 	return (

@@ -17,7 +17,7 @@ class HomeController extends Controller
 
 	public function getTopBooksDiscount(BookRequest $request)
 	{
-		return response($this->_bookRepository->getTopBooksDiscount()->limit($request->total)->get());
+		return response($this->_bookRepository->sortByOnSale()->limit($request->total)->get());
 	}
 	public function getTopBooksRecommended(BookRequest $request)
 	{

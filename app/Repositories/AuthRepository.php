@@ -22,15 +22,15 @@ class AuthRepository extends BaseRepository
 			'password' => Hash::make($request->password)
 		]);
 		if ($_user) {
-			return response()->json([
-				'status' => 'success',
+			return response([
+				// 'status' => 'successful',
 				'message' => 'Register successful'
-			]);
+			], 201);
 		} else {
-			return response()->json([
-				'status' => 'fail',
+			return response([
+				// 'status' => 'fail',
 				'message' => 'Something wrong'
-			]);
+			], 500);
 		}
 	}
 	public function loginUser(AuthRequest $request)
@@ -39,25 +39,26 @@ class AuthRepository extends BaseRepository
 		if ($user) {
 			$token =  $user->createToken('logintoken')->plainTextToken;
 			if (Hash::check($request->password, $user->password)) {
-				return response()->json(
+				return response(
 					[
-						'status' => 'success',
+						// 'status' => 'successful',
 						'message' => 'Login successful',
 						'user' => $user,
 						'token' => $token
-					]
+					],
+					200
 				);
 			} else {
-				return response()->json([
-					'status' => 'fail',
+				return response([
+					// 'status' => 'fail',
 					'message' => 'Password not matches'
-				]);
+				], 401);
 			}
 		} else {
-			return response()->json([
-				'status' => 'fail',
+			return response([
+				// 'status' => 'fail',
 				'message' => 'This email is not registered'
-			]);
+			], 404);
 		}
 	}
 	public function logoutUser()
@@ -65,10 +66,10 @@ class AuthRepository extends BaseRepository
 		Auth::user()->tokens->each(function ($token, $key) {
 			$token->delete();
 		});
-		return response()->json([
-			'status' => 'success',
+		return response([
+			// 'status' => 'successful',
 			'message' => 'Logout success'
-		]);
+		], 200);
 	}
 	public function create($data)
 	{

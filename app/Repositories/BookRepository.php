@@ -17,16 +17,6 @@ class BookRepository extends BaseRepository
 		$this->query = Book::query();
 	}
 	//HOME
-	public function getTopBooksDiscount()
-	{
-		$_books = $this->query
-			->select('book.id as book_id', 'book.book_title', 'book.book_cover_photo', 'author.author_name', 'book.book_price', 'discount.discount_price')
-			->join('discount', 'book.id', '=', 'discount.book_id')
-			->leftjoin('author', 'author.id', '=', 'book.author_id')
-			->orderByRaw('book.book_price-discount.discount_price DESC');
-		return $_books;
-	}
-
 	public function getTopBooksRecommended()
 	{
 		$_book = Book::query()

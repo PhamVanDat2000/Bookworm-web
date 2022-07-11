@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card';
-import { useSelector, useDispatch } from 'react-redux';
-import { addToCard } from '../../features/cart/cartSlice';
 import ButtonCustom from '../button/ButtonCustom';
 
 
 export default function AddToCart(props) {
 	const { book } = props
 	const [quantity, setQuantity] = useState(1)
-	const dispatch = useDispatch()
 
 	const handleMinus = () => {
 		if (quantity > 1) {
@@ -20,8 +17,9 @@ export default function AddToCart(props) {
 			setQuantity(quantity + 1)
 		}
 	}
+	var allEntries = JSON.parse(localStorage.getItem('cart')) || [];
 	const handleAddCart = () => {
-		dispatch(addToCard({
+		const data = {
 			book_id: book.book_id,
 			book_title: book.book_title,
 			author_name: book.author_name,
@@ -30,14 +28,22 @@ export default function AddToCart(props) {
 			discount_price: book.discount_price,
 			final_price: book.final_price,
 			quantity: quantity
-		}))
-
+		}
+		allEntries.push(data);
+		localStorage.setItem('cart', JSON.stringify(allEntries))
 	}
 	return (
 		<Card className='add-to-card'>
 			<Card.Header className="d-flex justify-content-start">
-				<span className="book-price">${(book.book_price * quantity).toFixed(2)}</span>
-				<span className="discount-price">${(book.discount_price * quantity).toFixed(2)}</span>
+				{
+					book.discount_price == book.final_price ?
+						<>
+							<span className="book-price">${(book.book_price * quantity).toFixed(2)}</span>
+							<span className="discount-price">${(book.discount_price * quantity).toFixed(2)}</span>
+						</>
+						:
+						<span className="discount-price">${(book.book_price * quantity).toFixed(2)}</span>
+				}
 			</Card.Header>
 			<Card.Body className="d-flex flex-column align-items-center">
 				<h6>Quantity</h6>

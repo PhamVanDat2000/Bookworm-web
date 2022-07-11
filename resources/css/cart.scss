@@ -1,13 +1,16 @@
+.cart-container {
+    min-height: calc(100vh - 166px);
+}
 .input-quantity {
     width: 30px;
 }
 .img-cart {
     width: 100%;
 }
-.quantity-cart{
-	border: 1px solid #ccc;
-	width: 80px;
-	button{
-		border: none;
-	}
+.quantity-cart {
+    border: 1px solid #ccc;
+    width: 80px;
+    button {
+        border: none;
+    }
 }
