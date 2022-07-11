@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import cardReducer from '../features/card/cardSlice'
+import cartReducer from '../features/cart/cartSlice'
 import listbookReducer from '../features/shop/listbookSlice'
 import navbarReducer from '../features/navbar/navbarSlice'
 
 export default configureStore({
 	reducer: {
-		cardReducer: cardReducer,
+		cartReducer: cartReducer,
 		listbookReducer: listbookReducer,
 		navbarReducer: navbarReducer
 	}

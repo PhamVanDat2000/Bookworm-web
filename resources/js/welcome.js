@@ -9,7 +9,7 @@ import Home from './pages/home/Home';
 import Shop from './pages/shop/Shop';
 import Product from './pages/product/Product';
 import '../css/app.css';
-import SignIn from './pages/signIn/SignIn';
+import Cart from './pages/cart/Cart';
 class Welcome extends Component {
 	render() {
 		return (
@@ -18,6 +18,7 @@ class Welcome extends Component {
 					<Route path="/home" element={<Home />} />
 					<Route path="/shop" element={<Shop />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/cart" element={<Cart />} />
 					<Route path="/product">
 						<Route path=":id" element={<Product />}/>
 					</Route>

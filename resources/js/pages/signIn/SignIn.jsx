@@ -65,7 +65,7 @@ export default function SignIn(props) {
 							mode === 'signin' ?
 								<form onSubmit={(e) => handleSubmitLogin(e)}>
 									<h1>Sign In</h1>
-									<input type="email" onChange={e => setDataLogin({ ...dataLogin, email: e.target.value })} value={dataLogin.email} className="email-field" placeholder="Email" />
+									<input type="email" onChange={e => setDataLogin({ ...dataLogin, email: e.target.value })} className="email-field" placeholder="Email" />
 									<input type="password" onChange={e => setDataLogin({ ...dataLogin, password: e.target.value })} className="password-field" placeholder="Password" />
 									<div className="btn-login" onClick={() => handleSubmitLogin()}>
 										<ButtonCustom text={'Sign In'} />
