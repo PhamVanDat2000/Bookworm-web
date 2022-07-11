@@ -1,4 +1,5 @@
 import React from 'react'
+import { Form } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ButtonCustom from '../button/ButtonCustom';
 
@@ -16,7 +17,7 @@ export default function CreateReview() {
 					</div>
 					<div className="form-group mb-4">
 						<label htmlFor="inputDetail">Details please! Your review helps other shoppers</label>
-						<input type="text" className="form-control" id="inputDetail" />
+						<Form.Control as="textarea" rows={3} />
 					</div>
 					<div className="form-group mb-4">
 						<label htmlFor="FormControlSelect1">Select a rating star</label>

@@ -7709,9 +7709,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ CreateReview)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
 /* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Card */ "./node_modules/react-bootstrap/esm/Card.js");
 /* harmony import */ var _button_ButtonCustom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../button/ButtonCustom */ "./resources/js/components/button/ButtonCustom.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -7743,10 +7745,9 @@ function CreateReview() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
             htmlFor: "inputDetail",
             children: "Details please! Your review helps other shoppers"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            className: "form-control",
-            id: "inputDetail"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Control, {
+            as: "textarea",
+            rows: 3
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "form-group mb-4",
@@ -8859,10 +8860,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_footer_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/footer/Footer */ "./resources/js/components/footer/Footer.jsx");
 /* harmony import */ var _components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/navBar/NavBar */ "./resources/js/components/navBar/NavBar.jsx");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
-/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
-/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Alert.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -8874,15 +8877,18 @@ __webpack_require__.r(__webpack_exports__);
 
 function About() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+      variant: "success",
+      children: "This is a alert\u2014check it out!"
+    }, 'success'), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "about-container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_4__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_5__.default, {
         className: "sub-about-container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
           children: "About us"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_5__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_6__.default, {
           className: "d-flex justify-content-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_6__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7__.default, {
             xs: 12,
             md: 10,
             lg: 8,
@@ -8893,11 +8899,11 @@ function About() {
               children: "Welcome to Bookworm"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
               children: "Bookworm is an independent New York bookstore and language school with locations in Manhattan and Brooklyn. We specialize in travel books and language classes."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_5__.default, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_6__.default, {
               xs: 1,
               md: 2,
               lg: 2,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_6__.default, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7__.default, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
                   children: "Our Story"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -8907,7 +8913,7 @@ function About() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
                   children: "From March 2008 through May 2016, the store was located in the Flatiron District."
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_6__.default, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_7__.default, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
                   children: "Our Vision"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -8942,14 +8948,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_footer_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/footer/Footer */ "./resources/js/components/footer/Footer.jsx");
 /* harmony import */ var _components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/navBar/NavBar */ "./resources/js/components/navBar/NavBar.jsx");
-/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
-/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
-/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Card.js");
+/* harmony import */ var react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap/Container */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Card.js");
 /* harmony import */ var _assets__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets */ "./resources/assets/index.js");
 /* harmony import */ var _components_button_ButtonCustom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/button/ButtonCustom */ "./resources/js/components/button/ButtonCustom.jsx");
 /* harmony import */ var _api_cartApi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../api/cartApi */ "./resources/api/cartApi.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _signIn_SignIn__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../signIn/SignIn */ "./resources/js/pages/signIn/SignIn.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -8973,6 +8980,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -9084,146 +9092,161 @@ function Cart() {
     };
   }();
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      show = _useState4[0],
+      setShow = _useState4[1];
+
   var handlePlaceOrder = function handlePlaceOrder() {
-    console.log('place order');
-    placeOrder();
+    var isLogin = JSON.parse(localStorage.getItem('isLogin'));
+
+    if (isLogin) {
+      placeOrder();
+    } else {
+      setShow(true);
+    }
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_8__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_9__.default, {
       className: "cart-container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_signIn_SignIn__WEBPACK_IMPORTED_MODULE_7__.default, {
+        styles: {
+          display: 'none'
+        },
+        show: show
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__.default, {
         xs: 1,
         lg: 2,
         className: "mb-3",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
           lg: 8,
           className: "mt-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Header, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__.default, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default.Header, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__.default, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
                   lg: 4,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                     children: "Product"
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
                   lg: 8,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__.default, {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__.default, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                         children: "Price"
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                         children: "Quantity"
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                         children: "Total"
                       })
                     })]
                   })
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Body, {
-              children: cartData.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default.Body, {
+              children: cartData.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
                 className: "mt-3 mb-3 text-center",
                 children: "Cart Empty"
               }) : cartData.map(function (ele, idx) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__.default, {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__.default, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
                     lg: 4,
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__.default, {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__.default, {
                       lg: 2,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
                           className: "img-cart",
                           src: ele.book_cover_photo ? _assets__WEBPACK_IMPORTED_MODULE_4__.default[ele.book_cover_photo] : _assets__WEBPACK_IMPORTED_MODULE_4__.default.bookDefault,
                           alt: "book image"
                         })
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
                         className: "d-flex justify-content-center flex-column",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                           className: "text-truncate",
                           children: ele.book_title
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
                           children: ele.author_name
                         })]
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
                     lg: 8,
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_9__.default, {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_10__.default, {
                       className: "d-flex align-items-center h-100",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                        children: ele.discount_price === ele.final_price ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                        children: ele.discount_price === ele.final_price ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                             children: ele.discount_price
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                             children: ele.book_price
                           })]
-                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                           children: ele.book_price
                         })
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                           className: "quantity-cart d-flex justify-content-between",
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
                             onClick: function onClick() {
                               return handleMinusQuantity(ele.book_id, ele.quantity);
                             },
                             children: "-"
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                             children: ele.quantity
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
                             onClick: function onClick() {
                               return handleAddQuantity(ele.book_id, ele.quantity);
                             },
                             children: "+"
                           })]
                         })
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h6", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h6", {
                           children: (ele.discount_price * ele.quantity).toFixed(2)
                         })
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("hr", {
                     className: "mt-2"
                   })]
                 }, idx);
               })
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_10__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_11__.default, {
           lg: 4,
           xs: 8,
           className: "mt-2 m-auto",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Header, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default.Header, {
               className: "d-flex justify-content-center",
               children: "Cart Totals"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Body, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Title, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default.Body, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_12__.default.Title, {
                 className: "d-flex justify-content-center mt-4 mb-4",
                 children: ["$", allEntries.reduce(function (acc, currVal) {
                   return acc + currVal.quantity * currVal.final_price;
                 }, 0)]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                 className: "w-75 m-auto mt-4 mb-4",
                 onClick: function onClick() {
                   return handlePlaceOrder();
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_button_ButtonCustom__WEBPACK_IMPORTED_MODULE_5__.default, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_button_ButtonCustom__WEBPACK_IMPORTED_MODULE_5__.default, {
                   text: 'Place Order'
                 })
               })]
             })]
           })
         })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_footer_Footer__WEBPACK_IMPORTED_MODULE_2__.default, {})]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_footer_Footer__WEBPACK_IMPORTED_MODULE_2__.default, {})]
   });
 }
 
@@ -10257,35 +10280,39 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function SignIn(props) {
-  var text = props.text;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      modalShow = _useState2[0],
+      setModalShow = _useState2[1];
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('signin'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      mode = _useState4[0],
+      setmode = _useState4[1];
+
+  var text = props.text;
+  var show = props.show || false;
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setModalShow(show);
+  }, [show]);
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     email: '',
     password: ''
   }),
-      _useState2 = _slicedToArray(_useState, 2),
-      dataLogin = _useState2[0],
-      setDataLogin = _useState2[1];
+      _useState6 = _slicedToArray(_useState5, 2),
+      dataLogin = _useState6[0],
+      setDataLogin = _useState6[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     email: '',
     password: '',
     first_name: '',
     last_name: ''
   }),
-      _useState4 = _slicedToArray(_useState3, 2),
-      dataRegister = _useState4[0],
-      setDataRegister = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      modalShow = _useState6[0],
-      setModalShow = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('signin'),
       _useState8 = _slicedToArray(_useState7, 2),
-      mode = _useState8[0],
-      setmode = _useState8[1];
+      dataRegister = _useState8[0],
+      setDataRegister = _useState8[1];
 
   var login = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -10776,7 +10803,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: #f0f2f5;\n}\n\n.card-item {\n  cursor: pointer;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  width: 16rem;\n  height: 26rem;\n  display: flex;\n  justify-content: center;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.card-item .card-img-top {\n  width: 100%;\n  height: 70%;\n  display: block;\n  margin: 0 auto;\n}\n.card-item .card-body {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.card-item .card-title {\n  font-size: 18px;\n}\n.card-item .card-price-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n.card-item .card-price-book .text-price {\n  color: #ee4d2d;\n}\n\n.carousel-book .react-multi-carousel-item {\n  display: flex;\n  justify-content: center;\n}\n\n.container-onsale-title {\n  margin-top: 24px;\n  padding: 16px 0;\n}\n.container-onsale-title .onsale-title {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.container-onsale-title .onsale-title h1 {\n  font-size: 28px;\n}\n.container-onsale-title .btn-primary {\n  background-color: #20cccc;\n  border: none;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  border-radius: 10px;\n  width: 150px;\n  padding: 8px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n}\n.container-onsale-title .btn-primary:hover {\n  background-color: #66ccff;\n}\n\n.container-carousel {\n  background-color: #ffffff;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  padding: 30px 30px;\n  width: 100%;\n}\n\n.container-featured {\n  margin-top: 24px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container-featured h1 {\n  margin: auto;\n  font-size: 28px;\n}\n.container-featured .filter-featured-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n.container-featured .filter-featured-book h2 {\n  background-color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  width: 190px;\n  padding: 16px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.container-featured .filter-featured-book h2:hover {\n  background-color: #8ee4af;\n}\n.container-featured .filter-featured-book .featured-active {\n  background-color: #5cdb95;\n  color: #ffffff;\n}\n\n.col-item {\n  display: flex;\n  justify-content: center;\n}\n\n.shop-container {\n  margin-top: 24px;\n}\n.shop-container .block-filter {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px;\n}\n.shop-container .block-filter h1 {\n  font-size: 16px;\n}\n.shop-container .block-filter li {\n  list-style: none;\n  cursor: pointer;\n}\n.shop-container .sort-select {\n  width: 180px;\n  margin-right: 10px;\n}\n.shop-container .filter-number-select {\n  width: 112px;\n}\n.shop-container .sorting-container {\n  margin-bottom: 10px;\n}\n\n.accordion-container {\n  margin-bottom: 10px;\n}\n.accordion-container .accordion-header {\n  color: #fff;\n  background-color: #ff854d;\n  cursor: pointer;\n}\n.accordion-container .accordion-item {\n  cursor: pointer;\n  background-color: #fff;\n}\n.accordion-container .accordion-item:hover {\n  background-color: #dfdbdb;\n}\n\n.page-link {\n  cursor: pointer;\n}\n\n.footer-container {\n  background-color: #f8f9fa;\n  margin-top: 10px;\n  padding: 10px 20px;\n}\n.footer-container h1 {\n  font-weight: 200;\n  font-size: 20px;\n}\n.footer-container h5 {\n  font-size: 16px;\n  font-weight: 100;\n}\n\n.about-container {\n  min-height: calc(100vh - 56px);\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.sub-about-container {\n  margin-top: 24px;\n}\n.sub-about-container h5 {\n  font-weight: 400;\n}\n\n.product-img {\n  width: 100%;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.title-img {\n  margin-top: 10px;\n  text-align: right;\n  font-weight: 400;\n}\n\n.product-item-container {\n  border: 1px solid #b4b4b4;\n  border-radius: 8px;\n  background-color: #ffffff;\n  min-height: 500px;\n}\n\n.product-desctiption {\n  padding: 30px 28px;\n}\n\n.book-price {\n  font-size: 16px;\n  text-decoration: line-through;\n  margin-right: 10px;\n}\n\n.discount-price {\n  font-size: 20px;\n  color: #ee4d2d;\n}\n\n.add-to-card {\n  border: #e9e8e8 1px solid;\n}\n.add-to-card .card-body {\n  padding: 36px;\n}\n.add-to-card .quatity-cart {\n  width: 100%;\n  margin: 20px 0;\n  padding: 4px;\n  display: flex;\n  justify-content: space-between;\n  border-radius: 10px;\n  box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;\n}\n.add-to-card .quatity-cart span {\n  cursor: pointer;\n  font-size: 28px;\n  border-radius: 15px;\n}\n.add-to-card .quatity-cart button {\n  height: 42px;\n  width: 42px;\n  background-color: #015958;\n  border: none;\n  border-radius: 50%;\n  color: #ffffff;\n}\n\n.customer-revie-container span {\n  text-decoration: underline;\n  margin-left: 10px;\n}\n.customer-revie-container .sort-select-date {\n  width: 300px;\n  margin-right: 10px;\n}\n\n.customer-review-container {\n  padding: 24px 20px;\n}\n.customer-review-container span {\n  cursor: pointer;\n  margin: 0 10px 0 0;\n  text-decoration: underline;\n}\n.customer-review-container span .total {\n  font-weight: 700;\n}\n.customer-review-container .review-container {\n  margin-top: 12px;\n}\n.customer-review-container .review-container span {\n  font-weight: 100;\n  font-size: 13px;\n  text-decoration: none;\n  margin: 0;\n}\n.customer-review-container .review-container h6 {\n  font-weight: 400;\n  font-size: 16px;\n}\n.customer-review-container .review-container p {\n  margin-bottom: 8;\n}\n.customer-review-container .review-container hr {\n  margin: 10px 0;\n  height: 3px;\n  border: none;\n  background-color: #e4e4e4;\n}\n\n.navbar-container .navbar-brand {\n  cursor: pointer;\n}\n.navbar-container .nav-link {\n  margin-right: 4px;\n  font-weight: 700px !important;\n  border-radius: 4px;\n}\n.navbar-container .nav-link:hover {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n.navbar-container .active {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n\n.btn-custom {\n  color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  border: none;\n  width: 100%;\n  padding: 4px 8px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  background-color: #0cf25d;\n}\n.btn-custom:hover {\n  background-color: #f28705;\n}\n\n.container-signin .modal-content {\n  max-width: 450px;\n  max-height: 600px;\n  margin: 2rem auto;\n}\n.container-signin h1 {\n  text-align: center;\n  margin: 36px 0 60px;\n}\n.container-signin .name-field,\n.container-signin .email-field,\n.container-signin .password-field {\n  display: block;\n  width: 360px;\n  height: 40px;\n  font-size: 16px;\n  padding-left: 16px;\n  margin: auto;\n  border-radius: 8px;\n  outline: none;\n  border: 1px solid #d0cccc;\n  margin-bottom: 10px;\n  margin-top: 20px;\n}\n.container-signin .btn-login {\n  padding-top: 16px;\n  margin-top: 24px;\n  width: 360px;\n  margin: auto;\n  margin-bottom: 30px;\n  display: flex;\n  justify-content: center;\n}\n.container-signin span {\n  cursor: pointer;\n  text-decoration: underline;\n}\n\n.cart-container {\n  min-height: calc(100vh - 166px);\n}\n\n.input-quantity {\n  width: 30px;\n}\n\n.img-cart {\n  width: 100%;\n}\n\n.quantity-cart {\n  border: 1px solid #ccc;\n  width: 80px;\n}\n.quantity-cart button {\n  border: none;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: #f0f2f5;\n}\n\n.card-item {\n  cursor: pointer;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  width: 16rem;\n  height: 26rem;\n  display: flex;\n  justify-content: center;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.card-item .card-img-top {\n  width: 100%;\n  height: 70%;\n  display: block;\n  margin: 0 auto;\n}\n.card-item .card-body {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.card-item .card-title {\n  font-size: 18px;\n}\n.card-item .card-price-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n.card-item .card-price-book .text-price {\n  color: #ee4d2d;\n}\n\n.carousel-book .react-multi-carousel-item {\n  display: flex;\n  justify-content: center;\n}\n\n.container-onsale-title {\n  margin-top: 24px;\n  padding: 16px 0;\n}\n.container-onsale-title .onsale-title {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.container-onsale-title .onsale-title h1 {\n  font-size: 28px;\n}\n.container-onsale-title .btn-primary {\n  background-color: #20cccc;\n  border: none;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  border-radius: 10px;\n  width: 150px;\n  padding: 8px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n}\n.container-onsale-title .btn-primary:hover {\n  background-color: #66ccff;\n}\n\n.container-carousel {\n  background-color: #ffffff;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  padding: 30px 30px;\n  width: 100%;\n}\n\n.container-featured {\n  margin-top: 24px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container-featured h1 {\n  margin: auto;\n  font-size: 28px;\n}\n.container-featured .filter-featured-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n.container-featured .filter-featured-book h2 {\n  background-color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  width: 190px;\n  padding: 16px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.container-featured .filter-featured-book h2:hover {\n  background-color: #8ee4af;\n}\n.container-featured .filter-featured-book .featured-active {\n  background-color: #5cdb95;\n  color: #ffffff;\n}\n\n.col-item {\n  display: flex;\n  justify-content: center;\n}\n\n.shop-container {\n  margin-top: 24px;\n}\n.shop-container .block-filter {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px;\n}\n.shop-container .block-filter h1 {\n  font-size: 16px;\n}\n.shop-container .block-filter li {\n  list-style: none;\n  cursor: pointer;\n}\n.shop-container .sort-select {\n  width: 180px;\n  margin-right: 10px;\n}\n.shop-container .filter-number-select {\n  width: 112px;\n}\n.shop-container .sorting-container {\n  margin-bottom: 10px;\n}\n\n.accordion-container {\n  margin-bottom: 10px;\n}\n.accordion-container .accordion-header {\n  color: #fff;\n  background-color: #ff854d;\n  cursor: pointer;\n}\n.accordion-container .accordion-item {\n  cursor: pointer;\n  background-color: #fff;\n}\n.accordion-container .accordion-item:hover {\n  background-color: #dfdbdb;\n}\n\n.page-link {\n  cursor: pointer;\n}\n\n.footer-container {\n  background-color: #f8f9fa;\n  margin-top: 10px;\n  padding: 10px 20px;\n}\n.footer-container h1 {\n  font-weight: 200;\n  font-size: 20px;\n}\n.footer-container h5 {\n  font-size: 16px;\n  font-weight: 100;\n}\n\n.about-container {\n  min-height: calc(100vh - 56px);\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.sub-about-container {\n  margin-top: 24px;\n}\n.sub-about-container h5 {\n  font-weight: 400;\n}\n\n.product-img {\n  width: 100%;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.title-img {\n  margin-top: 10px;\n  text-align: right;\n  font-weight: 400;\n}\n\n.product-item-container {\n  border: 1px solid #b4b4b4;\n  border-radius: 8px;\n  background-color: #ffffff;\n  min-height: 500px;\n}\n\n.product-desctiption {\n  padding: 30px 28px;\n}\n\n.book-price {\n  font-size: 16px;\n  text-decoration: line-through;\n  margin-right: 10px;\n}\n\n.discount-price {\n  font-size: 20px;\n  color: #ee4d2d;\n}\n\n.add-to-card {\n  border: #e9e8e8 1px solid;\n}\n.add-to-card .card-body {\n  padding: 36px;\n}\n.add-to-card .quatity-cart {\n  width: 100%;\n  margin: 20px 0;\n  padding: 4px;\n  display: flex;\n  justify-content: space-between;\n  border-radius: 10px;\n  box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;\n}\n.add-to-card .quatity-cart span {\n  cursor: pointer;\n  font-size: 28px;\n  border-radius: 15px;\n}\n.add-to-card .quatity-cart button {\n  height: 42px;\n  width: 42px;\n  background-color: #015958;\n  border: none;\n  border-radius: 50%;\n  color: #ffffff;\n}\n\n.customer-revie-container span {\n  text-decoration: underline;\n  margin-left: 10px;\n}\n.customer-revie-container .sort-select-date {\n  width: 300px;\n  margin-right: 10px;\n}\n\n.customer-review-container {\n  padding: 24px 20px;\n}\n.customer-review-container span {\n  cursor: pointer;\n  margin: 0 10px 0 0;\n  text-decoration: underline;\n}\n.customer-review-container span .total {\n  font-weight: 700;\n}\n.customer-review-container .review-container {\n  margin-top: 12px;\n}\n.customer-review-container .review-container span {\n  font-weight: 100;\n  font-size: 13px;\n  text-decoration: none;\n  margin: 0;\n}\n.customer-review-container .review-container h6 {\n  font-weight: 400;\n  font-size: 16px;\n}\n.customer-review-container .review-container p {\n  margin-bottom: 8;\n}\n.customer-review-container .review-container hr {\n  margin: 10px 0;\n  height: 3px;\n  border: none;\n  background-color: #e4e4e4;\n}\n\n.navbar-container .navbar-brand {\n  cursor: pointer;\n}\n.navbar-container .nav-link {\n  margin-right: 4px;\n  font-weight: 700px !important;\n  border-radius: 4px;\n}\n.navbar-container .nav-link:hover {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n.navbar-container .active {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n\n.btn-custom {\n  color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  border: none;\n  width: 100%;\n  padding: 4px 8px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  background-color: #0cf25d;\n}\n.btn-custom:hover {\n  background-color: #f28705;\n}\n\n.container-signin .modal-content {\n  max-width: 450px;\n  max-height: 600px;\n  margin: 2rem auto;\n}\n.container-signin h1 {\n  text-align: center;\n  margin: 36px 0 60px;\n}\n.container-signin .name-field,\n.container-signin .email-field,\n.container-signin .password-field {\n  display: block;\n  width: 360px;\n  height: 40px;\n  font-size: 16px;\n  padding-left: 16px;\n  margin: auto;\n  border-radius: 8px;\n  outline: none;\n  border: 1px solid #d0cccc;\n  margin-bottom: 10px;\n  margin-top: 20px;\n}\n.container-signin .btn-login {\n  padding-top: 16px;\n  margin-top: 24px;\n  width: 360px;\n  margin: auto;\n  margin-bottom: 30px;\n  display: flex;\n  justify-content: center;\n}\n.container-signin span {\n  cursor: pointer;\n  text-decoration: underline;\n}\n\n.cart-container {\n  min-height: calc(100vh - 166px);\n}\n\n.input-quantity {\n  width: 30px;\n}\n\n.img-cart {\n  width: 100%;\n}\n\n.quantity-cart {\n  border: 1px solid #ccc;\n  width: 80px;\n}\n.quantity-cart button {\n  border: none;\n}\n\n.alert-custome {\n  position: relative;\n  top: 0;\n  right: 0;\n  width: 500px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14498,6 +14525,103 @@ var AccordionToggle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef
 
 /***/ }),
 
+/***/ "./node_modules/react-bootstrap/esm/Alert.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Alert.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var uncontrollable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! uncontrollable */ "./node_modules/uncontrollable/lib/esm/index.js");
+/* harmony import */ var _restart_hooks_useEventCallback__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @restart/hooks/useEventCallback */ "./node_modules/@restart/hooks/esm/useEventCallback.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+/* harmony import */ var _Fade__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Fade */ "./node_modules/react-bootstrap/esm/Fade.js");
+/* harmony import */ var _CloseButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CloseButton */ "./node_modules/react-bootstrap/esm/CloseButton.js");
+/* harmony import */ var _divWithClassName__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./divWithClassName */ "./node_modules/react-bootstrap/esm/divWithClassName.js");
+/* harmony import */ var _createWithBsPrefix__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./createWithBsPrefix */ "./node_modules/react-bootstrap/esm/createWithBsPrefix.js");
+/* harmony import */ var _SafeAnchor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SafeAnchor */ "./node_modules/react-bootstrap/esm/SafeAnchor.js");
+
+
+var _excluded = ["bsPrefix", "show", "closeLabel", "className", "children", "variant", "onClose", "dismissible", "transition"];
+
+
+
+
+
+
+
+
+
+
+var DivStyledAsH4 = (0,_divWithClassName__WEBPACK_IMPORTED_MODULE_6__.default)('h4');
+DivStyledAsH4.displayName = 'DivStyledAsH4';
+var AlertHeading = (0,_createWithBsPrefix__WEBPACK_IMPORTED_MODULE_7__.default)('alert-heading', {
+  Component: DivStyledAsH4
+});
+var AlertLink = (0,_createWithBsPrefix__WEBPACK_IMPORTED_MODULE_7__.default)('alert-link', {
+  Component: _SafeAnchor__WEBPACK_IMPORTED_MODULE_8__.default
+});
+var defaultProps = {
+  show: true,
+  transition: _Fade__WEBPACK_IMPORTED_MODULE_9__.default,
+  closeLabel: 'Close alert'
+};
+var Alert = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (uncontrolledProps, ref) {
+  var _useUncontrolled = (0,uncontrollable__WEBPACK_IMPORTED_MODULE_4__.useUncontrolled)(uncontrolledProps, {
+    show: 'onClose'
+  }),
+      bsPrefix = _useUncontrolled.bsPrefix,
+      show = _useUncontrolled.show,
+      closeLabel = _useUncontrolled.closeLabel,
+      className = _useUncontrolled.className,
+      children = _useUncontrolled.children,
+      variant = _useUncontrolled.variant,
+      onClose = _useUncontrolled.onClose,
+      dismissible = _useUncontrolled.dismissible,
+      transition = _useUncontrolled.transition,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_useUncontrolled, _excluded);
+
+  var prefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_10__.useBootstrapPrefix)(bsPrefix, 'alert');
+  var handleClose = (0,_restart_hooks_useEventCallback__WEBPACK_IMPORTED_MODULE_5__.default)(function (e) {
+    if (onClose) {
+      onClose(false, e);
+    }
+  });
+  var Transition = transition === true ? _Fade__WEBPACK_IMPORTED_MODULE_9__.default : transition;
+  var alert = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({
+    role: "alert"
+  }, !Transition ? props : undefined, {
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, prefix, variant && prefix + "-" + variant, dismissible && prefix + "-dismissible")
+  }), dismissible && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_CloseButton__WEBPACK_IMPORTED_MODULE_11__.default, {
+    onClick: handleClose,
+    label: closeLabel
+  }), children);
+  if (!Transition) return show ? alert : null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Transition, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({
+    unmountOnExit: true
+  }, props, {
+    ref: undefined,
+    in: show
+  }), alert);
+});
+Alert.displayName = 'Alert';
+Alert.defaultProps = defaultProps;
+Alert.Link = AlertLink;
+Alert.Heading = AlertHeading;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Alert);
+
+/***/ }),
+
 /***/ "./node_modules/react-bootstrap/esm/BootstrapModalManager.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/react-bootstrap/esm/BootstrapModalManager.js ***!
@@ -15608,6 +15732,868 @@ var Fade = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (
 Fade.defaultProps = defaultProps;
 Fade.displayName = 'Fade';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Fade);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/Feedback.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Feedback.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+
+
+var _excluded = ["as", "className", "type", "tooltip"];
+
+
+
+var propTypes = {
+  /**
+   * Specify whether the feedback is for valid or invalid fields
+   *
+   * @type {('valid'|'invalid')}
+   */
+  type: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+
+  /** Display feedback as a tooltip. */
+  tooltip: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  as: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().elementType)
+};
+var Feedback = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      className = _ref.className,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'valid' : _ref$type,
+      _ref$tooltip = _ref.tooltip,
+      tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, type + "-" + (tooltip ? 'tooltip' : 'feedback'))
+  }));
+});
+Feedback.displayName = 'Feedback';
+Feedback.propTypes = propTypes;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Feedback);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/Form.js":
+/*!**************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Form.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormCheck__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./FormCheck */ "./node_modules/react-bootstrap/esm/FormCheck.js");
+/* harmony import */ var _FormFile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./FormFile */ "./node_modules/react-bootstrap/esm/FormFile.js");
+/* harmony import */ var _FormControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormControl */ "./node_modules/react-bootstrap/esm/FormControl.js");
+/* harmony import */ var _FormGroup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormGroup */ "./node_modules/react-bootstrap/esm/FormGroup.js");
+/* harmony import */ var _FormLabel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./FormLabel */ "./node_modules/react-bootstrap/esm/FormLabel.js");
+/* harmony import */ var _FormText__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./FormText */ "./node_modules/react-bootstrap/esm/FormText.js");
+/* harmony import */ var _Switch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Switch */ "./node_modules/react-bootstrap/esm/Switch.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+/* harmony import */ var _createWithBsPrefix__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createWithBsPrefix */ "./node_modules/react-bootstrap/esm/createWithBsPrefix.js");
+
+
+var _excluded = ["bsPrefix", "inline", "className", "validated", "as"];
+
+
+
+
+
+
+
+
+
+
+
+var FormRow = (0,_createWithBsPrefix__WEBPACK_IMPORTED_MODULE_4__.default)('form-row');
+var defaultProps = {
+  inline: false
+};
+var FormImpl = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      inline = _ref.inline,
+      className = _ref.className,
+      validated = _ref.validated,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'form' : _ref$as,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(bsPrefix, 'form');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, validated && 'was-validated', inline && bsPrefix + "-inline")
+  }));
+});
+FormImpl.displayName = 'Form';
+FormImpl.defaultProps = defaultProps;
+FormImpl.Row = FormRow;
+FormImpl.Group = _FormGroup__WEBPACK_IMPORTED_MODULE_6__.default;
+FormImpl.Control = _FormControl__WEBPACK_IMPORTED_MODULE_7__.default;
+FormImpl.Check = _FormCheck__WEBPACK_IMPORTED_MODULE_8__.default;
+FormImpl.File = _FormFile__WEBPACK_IMPORTED_MODULE_9__.default;
+FormImpl.Switch = _Switch__WEBPACK_IMPORTED_MODULE_10__.default;
+FormImpl.Label = _FormLabel__WEBPACK_IMPORTED_MODULE_11__.default;
+FormImpl.Text = _FormText__WEBPACK_IMPORTED_MODULE_12__.default;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormImpl);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormCheck.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormCheck.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types-extra/lib/all */ "./node_modules/prop-types-extra/lib/all.js");
+/* harmony import */ var prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Feedback */ "./node_modules/react-bootstrap/esm/Feedback.js");
+/* harmony import */ var _FormCheckInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormCheckInput */ "./node_modules/react-bootstrap/esm/FormCheckInput.js");
+/* harmony import */ var _FormCheckLabel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./FormCheckLabel */ "./node_modules/react-bootstrap/esm/FormCheckLabel.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "inline", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "title", "type", "label", "children", "custom", "as"];
+
+
+
+
+
+
+
+
+var FormCheck = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      _ref$inline = _ref.inline,
+      inline = _ref$inline === void 0 ? false : _ref$inline,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      _ref$feedbackTooltip = _ref.feedbackTooltip,
+      feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip,
+      feedback = _ref.feedback,
+      className = _ref.className,
+      style = _ref.style,
+      _ref$title = _ref.title,
+      title = _ref$title === void 0 ? '' : _ref$title,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'checkbox' : _ref$type,
+      label = _ref.label,
+      children = _ref.children,
+      propCustom = _ref.custom,
+      _ref$as = _ref.as,
+      as = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var custom = type === 'switch' ? true : propCustom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control'] : [bsPrefix, 'form-check'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(prefix, defaultPrefix);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_4__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_6__.default),
+      controlId = _useContext.controlId;
+
+  var innerFormContext = (0,react__WEBPACK_IMPORTED_MODULE_4__.useMemo)(function () {
+    return {
+      controlId: id || controlId,
+      custom: custom
+    };
+  }, [controlId, custom, id]);
+  var hasLabel = custom || label != null && label !== false && !children;
+  var input = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(_FormCheckInput__WEBPACK_IMPORTED_MODULE_7__.default, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    type: type === 'switch' ? 'checkbox' : type,
+    ref: ref,
+    isValid: isValid,
+    isInvalid: isInvalid,
+    isStatic: !hasLabel,
+    disabled: disabled,
+    as: as
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(_FormContext__WEBPACK_IMPORTED_MODULE_6__.default.Provider, {
+    value: innerFormContext
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+    style: style,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix, custom && "custom-" + type, inline && bsPrefix + "-inline")
+  }, children || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(react__WEBPACK_IMPORTED_MODULE_4__.Fragment, null, input, hasLabel && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(_FormCheckLabel__WEBPACK_IMPORTED_MODULE_8__.default, {
+    title: title
+  }, label), (isValid || isInvalid) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(_Feedback__WEBPACK_IMPORTED_MODULE_9__.default, {
+    type: isValid ? 'valid' : 'invalid',
+    tooltip: feedbackTooltip
+  }, feedback))));
+});
+FormCheck.displayName = 'FormCheck';
+FormCheck.Input = _FormCheckInput__WEBPACK_IMPORTED_MODULE_7__.default;
+FormCheck.Label = _FormCheckLabel__WEBPACK_IMPORTED_MODULE_8__.default;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormCheck);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormCheckInput.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormCheckInput.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "className", "type", "isValid", "isInvalid", "isStatic", "as"];
+
+
+
+
+var FormCheckInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'checkbox' : _ref$type,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      isStatic = _ref.isStatic,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_4__.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-input'] : [bsPrefix, 'form-check-input'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    type: type,
+    id: id || controlId,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid', isStatic && 'position-static')
+  }));
+});
+FormCheckInput.displayName = 'FormCheckInput';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormCheckInput);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormCheckLabel.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormCheckLabel.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"];
+
+
+
+
+var FormCheckLabel = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      htmlFor = _ref.htmlFor,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_4__.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-label'] : [bsPrefix, 'form-check-label'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement("label", (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    htmlFor: htmlFor || controlId,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix)
+  }));
+});
+FormCheckLabel.displayName = 'FormCheckLabel';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormCheckLabel);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormContext.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormContext.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+ // TODO
+
+var FormContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({
+  controlId: undefined
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormContext);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormControl.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormControl.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types-extra/lib/all */ "./node_modules/prop-types-extra/lib/all.js");
+/* harmony import */ var prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! warning */ "./node_modules/warning/warning.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(warning__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Feedback */ "./node_modules/react-bootstrap/esm/Feedback.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"];
+
+
+
+
+
+
+
+var FormControl = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      type = _ref.type,
+      size = _ref.size,
+      htmlSize = _ref.htmlSize,
+      id = _ref.id,
+      className = _ref.className,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      plaintext = _ref.plaintext,
+      readOnly = _ref.readOnly,
+      custom = _ref.custom,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_4__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_6__.default),
+      controlId = _useContext.controlId;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-control'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_7__.useBootstrapPrefix)(prefix, defaultPrefix);
+  var classes;
+
+  if (plaintext) {
+    var _classes;
+
+    classes = (_classes = {}, _classes[bsPrefix + "-plaintext"] = true, _classes);
+  } else if (type === 'file') {
+    var _classes2;
+
+    classes = (_classes2 = {}, _classes2[bsPrefix + "-file"] = true, _classes2);
+  } else if (type === 'range') {
+    var _classes3;
+
+    classes = (_classes3 = {}, _classes3[bsPrefix + "-range"] = true, _classes3);
+  } else if (Component === 'select' && custom) {
+    var _classes4;
+
+    classes = (_classes4 = {}, _classes4[bsPrefix + "-select"] = true, _classes4[bsPrefix + "-select-" + size] = size, _classes4);
+  } else {
+    var _classes5;
+
+    classes = (_classes5 = {}, _classes5[bsPrefix] = true, _classes5[bsPrefix + "-" + size] = size, _classes5);
+  }
+
+   true ? warning__WEBPACK_IMPORTED_MODULE_5___default()(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.') : 0;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    type: type,
+    size: htmlSize,
+    ref: ref,
+    readOnly: readOnly,
+    id: id || controlId,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, classes, isValid && "is-valid", isInvalid && "is-invalid")
+  }));
+});
+FormControl.displayName = 'FormControl';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Object.assign(FormControl, {
+  Feedback: _Feedback__WEBPACK_IMPORTED_MODULE_8__.default
+}));
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormFile.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormFile.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types-extra/lib/all */ "./node_modules/prop-types-extra/lib/all.js");
+/* harmony import */ var prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types_extra_lib_all__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Feedback__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Feedback */ "./node_modules/react-bootstrap/esm/Feedback.js");
+/* harmony import */ var _FormFileInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormFileInput */ "./node_modules/react-bootstrap/esm/FormFileInput.js");
+/* harmony import */ var _FormFileLabel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./FormFileLabel */ "./node_modules/react-bootstrap/esm/FormFileLabel.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "label", "children", "custom", "lang", "data-browse", "as", "inputAs"];
+
+
+
+
+
+
+
+
+var FormFile = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      _ref$feedbackTooltip = _ref.feedbackTooltip,
+      feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip,
+      feedback = _ref.feedback,
+      className = _ref.className,
+      style = _ref.style,
+      label = _ref.label,
+      children = _ref.children,
+      custom = _ref.custom,
+      lang = _ref.lang,
+      dataBrowse = _ref['data-browse'],
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      _ref$inputAs = _ref.inputAs,
+      inputAs = _ref$inputAs === void 0 ? 'input' : _ref$inputAs,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-file'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(prefix, defaultPrefix);
+  var type = 'file';
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_6__.default),
+      controlId = _useContext.controlId;
+
+  var innerFormContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    return {
+      controlId: id || controlId,
+      custom: custom
+    };
+  }, [controlId, custom, id]);
+  var hasLabel = label != null && label !== false && !children;
+  var input = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_FormFileInput__WEBPACK_IMPORTED_MODULE_7__.default, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    isValid: isValid,
+    isInvalid: isInvalid,
+    disabled: disabled,
+    as: inputAs,
+    lang: lang
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_FormContext__WEBPACK_IMPORTED_MODULE_6__.default.Provider, {
+    value: innerFormContext
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, {
+    style: style,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix, custom && "custom-" + type)
+  }, children || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(react__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, custom ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(react__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, input, hasLabel && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_FormFileLabel__WEBPACK_IMPORTED_MODULE_8__.default, {
+    "data-browse": dataBrowse
+  }, label)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(react__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, hasLabel && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_FormFileLabel__WEBPACK_IMPORTED_MODULE_8__.default, null, label), input), (isValid || isInvalid) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_Feedback__WEBPACK_IMPORTED_MODULE_9__.default, {
+    type: isValid ? 'valid' : 'invalid',
+    tooltip: feedbackTooltip
+  }, feedback))));
+});
+FormFile.displayName = 'FormFile';
+FormFile.Input = _FormFileInput__WEBPACK_IMPORTED_MODULE_7__.default;
+FormFile.Label = _FormFileLabel__WEBPACK_IMPORTED_MODULE_8__.default;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormFile);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormFileInput.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormFileInput.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["id", "bsPrefix", "bsCustomPrefix", "className", "isValid", "isInvalid", "lang", "as"];
+
+
+
+
+var FormFileInput = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      isValid = _ref.isValid,
+      isInvalid = _ref.isInvalid,
+      lang = _ref.lang,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_4__.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var type = 'file';
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-input'] : [bsPrefix, 'form-control-file'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    id: id || controlId,
+    type: type,
+    lang: lang,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid')
+  }));
+});
+FormFileInput.displayName = 'FormFileInput';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormFileInput);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormFileLabel.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormFileLabel.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"];
+
+
+
+
+var FormFileLabel = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      htmlFor = _ref.htmlFor,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_4__.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-label'] : [bsPrefix, 'form-file-label'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_5__.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement("label", (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    htmlFor: htmlFor || controlId,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix),
+    "data-browse": props['data-browse']
+  }));
+});
+FormFileLabel.displayName = 'FormFileLabel';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormFileLabel);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormGroup.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormGroup.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["bsPrefix", "className", "children", "controlId", "as"];
+
+
+
+
+var FormGroup = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      children = _ref.children,
+      controlId = _ref.controlId,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_4__.useBootstrapPrefix)(bsPrefix, 'form-group');
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    return {
+      controlId: controlId
+    };
+  }, [controlId]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_FormContext__WEBPACK_IMPORTED_MODULE_5__.default.Provider, {
+    value: context
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix)
+  }), children));
+});
+FormGroup.displayName = 'FormGroup';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormGroup);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormLabel.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormLabel.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! warning */ "./node_modules/warning/warning.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(warning__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Col__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Col */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var _FormContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FormContext */ "./node_modules/react-bootstrap/esm/FormContext.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["as", "bsPrefix", "column", "srOnly", "className", "htmlFor"];
+
+
+
+
+
+
+var defaultProps = {
+  column: false,
+  srOnly: false
+};
+var FormLabel = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
+  var _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'label' : _ref$as,
+      bsPrefix = _ref.bsPrefix,
+      column = _ref.column,
+      srOnly = _ref.srOnly,
+      className = _ref.className,
+      htmlFor = _ref.htmlFor,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(_FormContext__WEBPACK_IMPORTED_MODULE_5__.default),
+      controlId = _useContext.controlId;
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_6__.useBootstrapPrefix)(bsPrefix, 'form-label');
+  var columnClass = 'col-form-label';
+  if (typeof column === 'string') columnClass = columnClass + " " + columnClass + "-" + column;
+  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix, srOnly && 'sr-only', column && columnClass);
+   true ? warning__WEBPACK_IMPORTED_MODULE_4___default()(controlId == null || !htmlFor, '`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.') : 0;
+  htmlFor = htmlFor || controlId;
+  if (column) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_Col__WEBPACK_IMPORTED_MODULE_7__.default, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({
+    ref: ref,
+    as: "label",
+    className: classes,
+    htmlFor: htmlFor
+  }, props));
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+    react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({
+      ref: ref,
+      className: classes,
+      htmlFor: htmlFor
+    }, props))
+  );
+});
+FormLabel.displayName = 'FormLabel';
+FormLabel.defaultProps = defaultProps;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormLabel);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/FormText.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormText.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+var _excluded = ["bsPrefix", "className", "as", "muted"];
+
+
+
+var FormText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'small' : _ref$as,
+      muted = _ref.muted,
+      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, _excluded);
+
+  bsPrefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_4__.useBootstrapPrefix)(bsPrefix, 'form-text');
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, bsPrefix, muted && 'text-muted')
+  }));
+});
+FormText.displayName = 'FormText';
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormText);
 
 /***/ }),
 
@@ -16898,6 +17884,36 @@ var makeEventKey = function makeEventKey(eventKey, href) {
   return href || null;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SelectableContext);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/Switch.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Switch.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _FormCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormCheck */ "./node_modules/react-bootstrap/esm/FormCheck.js");
+
+
+
+var Switch = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(function (props, ref) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_FormCheck__WEBPACK_IMPORTED_MODULE_2__.default, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+    ref: ref,
+    type: "switch"
+  }));
+});
+Switch.displayName = 'Switch';
+Switch.Input = _FormCheck__WEBPACK_IMPORTED_MODULE_2__.default.Input;
+Switch.Label = _FormCheck__WEBPACK_IMPORTED_MODULE_2__.default.Label;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Switch);
 
 /***/ }),
 

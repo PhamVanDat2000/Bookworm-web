@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import ButtonCustom from '../../components/button/ButtonCustom';
 import authApi from '../../../api/authApi';
 
 export default function SignIn(props) {
+	const [modalShow, setModalShow] = useState(false);
+	const [mode, setmode] = useState('signin')
 	const { text } = props
+
+	const show = props.show || false
+	useEffect(() => {
+		setModalShow(show)
+	}, [show])
 	const [dataLogin, setDataLogin] = useState({
 		email: '',
 		password: '',
@@ -16,8 +23,6 @@ export default function SignIn(props) {
 		first_name: '',
 		last_name: ''
 	})
-	const [modalShow, setModalShow] = useState(false);
-	const [mode, setmode] = useState('signin')
 
 	const login = async () => {
 		try {

@@ -4,10 +4,11 @@ import NavBar from '../../components/navBar/NavBar'
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Card } from 'react-bootstrap';
+import { Alert, Card } from 'react-bootstrap';
 import IMAGE from '../../../assets';
 import ButtonCustom from '../../components/button/ButtonCustom';
 import cardApi from '../../../api/cartApi';
+import SignIn from '../signIn/SignIn';
 
 export default function Cart() {
 	let currUser = JSON.parse(localStorage.getItem('userLogin'))
@@ -64,14 +65,22 @@ export default function Cart() {
 			console.log(error)
 		}
 	}
+	const [show, setShow] = useState(false)
+
 	const handlePlaceOrder = () => {
-		console.log('place order')
-		placeOrder()
+		var isLogin = JSON.parse(localStorage.getItem('isLogin'))
+		if (isLogin) {
+			placeOrder()
+		}
+		else {
+			setShow(true)
+		}
 	}
 	return (
 		<>
 			<NavBar />
 			<Container className='cart-container'>
+				<SignIn styles={{display:'none'}} show={show}/>
 				<Row xs={1} lg={2} className='mb-3'>
 					<Col lg={8} className="mt-2">
 						<Card>
