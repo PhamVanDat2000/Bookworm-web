@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from '../../components/footer/Footer'
 import NavBar from '../../components/navBar/NavBar'
 import Container from 'react-bootstrap/Container';
@@ -9,6 +9,8 @@ import IMAGE from '../../../assets';
 import ButtonCustom from '../../components/button/ButtonCustom';
 import cardApi from '../../../api/cartApi';
 import SignIn from '../signIn/SignIn';
+import AlertCustom from '../../components/alert/AlertCustom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
 	let currUser = JSON.parse(localStorage.getItem('userLogin'))
@@ -69,11 +71,17 @@ export default function Cart() {
 		}
 	}
 	const [show, setShow] = useState(false)
+	const [alertMes, setAlertMes] = useState(false)
+	const navigate = useNavigate()
 
 	const handlePlaceOrder = () => {
 		var isLogin = JSON.parse(localStorage.getItem('isLogin'))
 		if (isLogin) {
 			placeOrder()
+			setAlertMes(true)
+			setTimeout(() => {
+				navigate('/home')
+			}, 10000)
 		}
 		else {
 			setShow(true)
@@ -82,6 +90,12 @@ export default function Cart() {
 	return (
 		<>
 			<NavBar />
+			{
+				alertMes ?
+					<AlertCustom variant='success' children="Place order success" />
+					:
+					null
+			}
 			<Container className='cart-container'>
 				<SignIn styles={{ display: 'none' }} show={show} />
 				<Row xs={1} lg={2} className='mb-3'>
@@ -133,7 +147,7 @@ export default function Cart() {
 																	ele.discount_price === ele.final_price ?
 																		<>
 																			<h6>{ele.discount_price}</h6>
-																			<h6>{ele.book_price}</h6>
+																			<h6 style={{ textDecoration: 'line-through' }}>{ele.book_price}</h6>
 																		</>
 																		:
 																		<h6>{ele.book_price}</h6>

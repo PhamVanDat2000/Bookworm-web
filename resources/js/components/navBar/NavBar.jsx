@@ -10,8 +10,11 @@ import { useSelector } from 'react-redux';
 import { setItemActive } from '../../features/navbar/navbarSlice';
 import { NavDropdown } from 'react-bootstrap';
 import authApi from '../../../api/authApi';
+import AlertCustom from '../alert/AlertCustom';
 
 function NavBar() {
+	const [variant, setVariant] = useState('')
+	const [children, setChildren] = useState('')
 	let navigate = useNavigate()
 	const dispatch = useDispatch()
 	let itemActive = useSelector(state => state.navbarReducer.itemActive)
@@ -37,6 +40,8 @@ function NavBar() {
 				localStorage.setItem('isLogin', false)
 				localStorage.removeItem('userLogin')
 				localStorage.removeItem('cart')
+				setVariant('success')
+				setChildren('logout successful')
 				window.location.reload()
 			}
 		} catch (error) {
@@ -83,6 +88,12 @@ function NavBar() {
 					}
 				</Nav>
 			</Navbar.Collapse>
+			{
+				variant ?
+					<AlertCustom variant={variant} children={children} />
+					:
+					null
+			}
 		</Navbar >
 	)
 }

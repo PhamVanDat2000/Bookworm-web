@@ -3,10 +3,13 @@ import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
 import ButtonCustom from '../../components/button/ButtonCustom';
 import authApi from '../../../api/authApi';
+import AlertCustom from '../../components/alert/AlertCustom';
 
 export default function SignIn(props) {
 	const [modalShow, setModalShow] = useState(false);
 	const [mode, setmode] = useState('signin')
+	const [variant, setVariant] = useState('')
+	const [children, setChildren] = useState('')
 	const { text } = props
 
 	const show = props.show || false
@@ -32,19 +35,37 @@ export default function SignIn(props) {
 				localStorage.setItem('userLogin', JSON.stringify(res.data))
 				localStorage.setItem('isLogin', true)
 				setModalShow(false)
+				setVariant('success')
+				setChildren('login successful')
 				window.location.reload()
+
 			}
 		} catch (error) {
 			console.log('Failed to login: ', error)
+			if(error.response.status ===401){
+				setVariant('danger')
+				setChildren('Email or password is incorrect')
+			}
 		}
 	}
 	const register = async () => {
 		try {
-			const data = await authApi.registerApi(dataRegister)
-			console.log('register successfully: ', data);
-			setModalShow(false)
+			const res = await authApi.registerApi(dataRegister)
+			if(res.status ===200){
+				console.log('register successfully: ', res);
+				setVariant('success')
+				setChildren('register successful')
+				setModalShow(false)
+			}if(res.status=422){
+				setVariant('success')
+				setChildren('register successful')
+			}
 		} catch (error) {
-			console.log('Failed to register: ', error)
+			console.log('Failed to register: ', error.response.status)
+			if(error.response.status ===422){
+				setVariant('danger')
+				setChildren('This email already register')
+			}
 		}
 	}
 
@@ -59,6 +80,13 @@ export default function SignIn(props) {
 			<span onClick={() => setModalShow(true)}>
 				{text}
 			</span>
+
+			{
+				variant ?
+					<AlertCustom variant={variant} children={children} />
+					:
+					null
+			}
 			<Container>
 				<Modal
 					show={modalShow}
