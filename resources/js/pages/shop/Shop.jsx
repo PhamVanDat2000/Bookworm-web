@@ -146,9 +146,9 @@ export default function Shop() {
 								</select>
 
 								<select onChange={(e) => handleShow(e)} defaultValue={"5"} className="form-select filter-number-select" aria-label="Default select example">
-									<option value="25">Show 20</option>
-									<option value="20">Show 15</option>
-									<option value="15">Show 10</option>
+									<option value="25">Show 25</option>
+									<option value="20">Show 20</option>
+									<option value="15">Show 15</option>
 									<option value="5" >Show 5</option>
 								</select>
 							</div>

@@ -13,6 +13,12 @@ import AlertCustom from '../../components/alert/AlertCustom';
 import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
+
+	const [variant, setVariant] = useState('')
+	const [children, setChildren] = useState('')
+	const [show, setShow] = useState(false)
+	const [alertMes, setAlertMes] = useState(false)
+	const navigate = useNavigate()
 	let currUser = JSON.parse(localStorage.getItem('userLogin'))
 	var allEntries = JSON.parse(localStorage.getItem('cart')) || [];
 	const [cartData, setCartData] = useState(allEntries)
@@ -65,23 +71,20 @@ export default function Cart() {
 				order_amount: dataProduct.reduce((acc, currVal) => { return acc + currVal.quantity }, 0),
 				products: dataProduct
 			})
-			console.log(res)
+			if (res.status == 200) {
+				setVariant('success')
+				setChildren('Place order successful')
+				console.log(res.status)
+			}
 		} catch (error) {
 			console.log(error)
 		}
 	}
-	const [show, setShow] = useState(false)
-	const [alertMes, setAlertMes] = useState(false)
-	const navigate = useNavigate()
 
 	const handlePlaceOrder = () => {
 		var isLogin = JSON.parse(localStorage.getItem('isLogin'))
 		if (isLogin) {
 			placeOrder()
-			setAlertMes(true)
-			setTimeout(() => {
-				navigate('/home')
-			}, 10000)
 		}
 		else {
 			setShow(true)
@@ -91,8 +94,8 @@ export default function Cart() {
 		<>
 			<NavBar />
 			{
-				alertMes ?
-					<AlertCustom variant='success' children="Place order success" />
+				variant ?
+					<AlertCustom variant={variant} children={children} />
 					:
 					null
 			}

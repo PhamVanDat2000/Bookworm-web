@@ -32,7 +32,7 @@ export default function Product() {
 			<Container>
 				<Row className='d-flex justify-content-center'>
 					<Col xs={12} md={10} lg={10}>
-						<h1>{book.category_name}</h1>
+						<h1>Category: {book.category_name}</h1>
 						<Row xs={1} lg={2} className='mb-3'>
 							<Col lg={8} className="product-item-container">
 								<Row>

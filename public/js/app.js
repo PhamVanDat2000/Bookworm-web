@@ -7257,12 +7257,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _axiosClient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./axiosClient */ "./resources/api/axiosClient.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _axiosClient__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./axiosClient */ "./resources/api/axiosClient.js");
+
+
+var token = '';
+
+if (JSON.parse(localStorage.getItem('userLogin'))) {
+  token = JSON.parse(localStorage.getItem('userLogin')).token;
+}
 
 var cardApi = {
   placeOrderApi: function placeOrderApi(params) {
     var url = 'api/product/make-order';
-    return _axiosClient__WEBPACK_IMPORTED_MODULE_0__.default.post(url, params);
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, params, {
+      headers: {
+        'content-type': 'application/json',
+        "Authorization": "Bearer ".concat(token)
+      }
+    });
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cardApi);
@@ -7496,9 +7510,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ AddToCart)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Card */ "./node_modules/react-bootstrap/esm/Card.js");
-/* harmony import */ var _button_ButtonCustom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../button/ButtonCustom */ "./resources/js/components/button/ButtonCustom.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Card */ "./node_modules/react-bootstrap/esm/Card.js");
+/* harmony import */ var _alert_AlertCustom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../alert/AlertCustom */ "./resources/js/components/alert/AlertCustom.jsx");
+/* harmony import */ var _button_ButtonCustom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../button/ButtonCustom */ "./resources/js/components/button/ButtonCustom.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -7516,6 +7531,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -7542,6 +7558,16 @@ function AddToCart(props) {
       setQuantity(quantity + 1);
     }
   };
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      variant = _useState4[0],
+      setVariant = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      children = _useState6[0],
+      setChildren = _useState6[1];
 
   var allEntries = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -7579,52 +7605,59 @@ function AddToCart(props) {
       newData.push(data);
     }
 
+    setVariant('success');
+    setChildren('add to cart successful');
     localStorage.setItem('cart', JSON.stringify(newData));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_3__.default, {
-    className: "add-to-card",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_3__.default.Header, {
-      className: "d-flex justify-content-start",
-      children: book.discount_price == book.final_price ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-          className: "book-price",
-          children: ["$", (book.book_price * quantity).toFixed(2)]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [variant ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_alert_AlertCustom__WEBPACK_IMPORTED_MODULE_1__.default, {
+      variant: variant,
+      children: children
+    }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_4__.default, {
+      className: "add-to-card",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_4__.default.Header, {
+        className: "d-flex justify-content-start",
+        children: book.discount_price == book.final_price ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+            className: "book-price",
+            children: ["$", (book.book_price * quantity).toFixed(2)]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+            className: "discount-price",
+            children: ["$", (book.discount_price * quantity).toFixed(2)]
+          })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
           className: "discount-price",
-          children: ["$", (book.discount_price * quantity).toFixed(2)]
-        })]
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-        className: "discount-price",
-        children: ["$", (book.book_price * quantity).toFixed(2)]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_3__.default.Body, {
-      className: "d-flex flex-column align-items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h6", {
-        children: "Quantity"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "quatity-cart",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          onClick: function onClick() {
-            return handleMinus();
-          },
-          children: "-"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: quantity
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          onClick: function onClick() {
-            return handleAdd();
-          },
-          children: "+"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        onClick: function onClick() {
-          return handleAddCart();
-        },
-        className: "d-flex justify-content-center w-100",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_button_ButtonCustom__WEBPACK_IMPORTED_MODULE_1__.default, {
-          text: 'Add to cart'
+          children: ["$", (book.book_price * quantity).toFixed(2)]
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_4__.default.Body, {
+        className: "d-flex flex-column align-items-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h6", {
+          children: "Quantity"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "quatity-cart",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            onClick: function onClick() {
+              return handleMinus();
+            },
+            children: "-"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: quantity
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            onClick: function onClick() {
+              return handleAdd();
+            },
+            children: "+"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          onClick: function onClick() {
+            return handleAddCart();
+          },
+          className: "d-flex justify-content-center w-100",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_button_ButtonCustom__WEBPACK_IMPORTED_MODULE_2__.default, {
+            text: 'Add to cart'
+          })
+        })]
       })]
     })]
   });
@@ -9104,13 +9137,34 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Cart() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      variant = _useState2[0],
+      setVariant = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      children = _useState4[0],
+      setChildren = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      show = _useState6[0],
+      setShow = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      alertMes = _useState8[0],
+      setAlertMes = _useState8[1];
+
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useNavigate)();
   var currUser = JSON.parse(localStorage.getItem('userLogin'));
   var allEntries = JSON.parse(localStorage.getItem('cart')) || [];
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(allEntries),
-      _useState2 = _slicedToArray(_useState, 2),
-      cartData = _useState2[0],
-      setCartData = _useState2[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(allEntries),
+      _useState10 = _slicedToArray(_useState9, 2),
+      cartData = _useState10[0],
+      setCartData = _useState10[1];
 
   var handleAddQuantity = function handleAddQuantity(id, quantity) {
     if (quantity < 8) {
@@ -9181,7 +9235,13 @@ function Cart() {
 
             case 4:
               res = _context.sent;
-              console.log(res);
+
+              if (res.status == 200) {
+                setVariant('success');
+                setChildren('Place order successful');
+                console.log(res.status);
+              }
+
               _context.next = 11;
               break;
 
@@ -9203,36 +9263,20 @@ function Cart() {
     };
   }();
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      show = _useState4[0],
-      setShow = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      alertMes = _useState6[0],
-      setAlertMes = _useState6[1];
-
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useNavigate)();
-
   var handlePlaceOrder = function handlePlaceOrder() {
     var isLogin = JSON.parse(localStorage.getItem('isLogin'));
 
     if (isLogin) {
       placeOrder();
-      setAlertMes(true);
-      setTimeout(function () {
-        navigate('/home');
-      }, 10000);
     } else {
       setShow(true);
     }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_3__.default, {}), alertMes ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_alert_AlertCustom__WEBPACK_IMPORTED_MODULE_8__.default, {
-      variant: "success",
-      children: "Place order success"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_navBar_NavBar__WEBPACK_IMPORTED_MODULE_3__.default, {}), variant ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_alert_AlertCustom__WEBPACK_IMPORTED_MODULE_8__.default, {
+      variant: variant,
+      children: children
     }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_11__.default, {
       className: "cart-container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_signIn_SignIn__WEBPACK_IMPORTED_MODULE_7__.default, {
@@ -9812,8 +9856,8 @@ function Product() {
           xs: 12,
           md: 10,
           lg: 10,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h1", {
-            children: book.category_name
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h1", {
+            children: ["Category: ", book.category_name]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_12__.default, {
             xs: 1,
             lg: 2,
@@ -10250,13 +10294,13 @@ function Shop() {
                 "aria-label": "Default select example",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
                   value: "25",
-                  children: "Show 20"
+                  children: "Show 25"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
                   value: "20",
-                  children: "Show 15"
+                  children: "Show 20"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
                   value: "15",
-                  children: "Show 10"
+                  children: "Show 15"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
                   value: "5",
                   children: "Show 5"
@@ -10478,7 +10522,7 @@ function SignIn(props) {
                 window.location.reload();
               }
 
-              _context.next = 12;
+              _context.next = 13;
               break;
 
             case 8:
@@ -10491,7 +10535,12 @@ function SignIn(props) {
                 setChildren('Email or password is incorrect');
               }
 
-            case 12:
+              if (_context.t0.response.status === 404) {
+                setVariant('info');
+                setChildren('This email is not registered');
+              }
+
+            case 13:
             case "end":
               return _context.stop();
           }
@@ -10969,7 +11018,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: #f0f2f5;\n}\n\n.card-item {\n  cursor: pointer;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  width: 16rem;\n  height: 26rem;\n  display: flex;\n  justify-content: center;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.card-item .card-img-top {\n  width: 100%;\n  height: 70%;\n  display: block;\n  margin: 0 auto;\n}\n.card-item .card-body {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.card-item .card-title {\n  font-size: 18px;\n}\n.card-item .card-price-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n.card-item .card-price-book .text-price {\n  color: #ee4d2d;\n}\n\n.carousel-book .react-multi-carousel-item {\n  display: flex;\n  justify-content: center;\n}\n\n.container-onsale-title {\n  margin-top: 24px;\n  padding: 16px 0;\n}\n.container-onsale-title .onsale-title {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.container-onsale-title .onsale-title h1 {\n  font-size: 28px;\n}\n.container-onsale-title .btn-primary {\n  background-color: #20cccc;\n  border: none;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  border-radius: 10px;\n  width: 150px;\n  padding: 8px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n}\n.container-onsale-title .btn-primary:hover {\n  background-color: #66ccff;\n}\n\n.container-carousel {\n  background-color: #ffffff;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  padding: 30px 30px;\n  width: 100%;\n}\n\n.container-featured {\n  margin-top: 24px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container-featured h1 {\n  margin: auto;\n  font-size: 28px;\n}\n.container-featured .filter-featured-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n.container-featured .filter-featured-book h2 {\n  background-color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  width: 190px;\n  padding: 16px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.container-featured .filter-featured-book h2:hover {\n  background-color: #8ee4af;\n}\n.container-featured .filter-featured-book .featured-active {\n  background-color: #5cdb95;\n  color: #ffffff;\n}\n\n.col-item {\n  display: flex;\n  justify-content: center;\n}\n\n.shop-container {\n  margin-top: 24px;\n}\n.shop-container .block-filter {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px;\n}\n.shop-container .block-filter h1 {\n  font-size: 16px;\n}\n.shop-container .block-filter li {\n  list-style: none;\n  cursor: pointer;\n}\n.shop-container .sort-select {\n  width: 180px;\n  margin-right: 10px;\n}\n.shop-container .filter-number-select {\n  width: 112px;\n}\n.shop-container .sorting-container {\n  margin-bottom: 10px;\n}\n\n.accordion-container {\n  margin-bottom: 10px;\n}\n.accordion-container .accordion-header {\n  color: #fff;\n  background-color: #ff854d;\n  cursor: pointer;\n}\n.accordion-container .accordion-item {\n  cursor: pointer;\n  background-color: #fff;\n}\n.accordion-container .accordion-item:hover {\n  background-color: #dfdbdb;\n}\n\n.page-link {\n  cursor: pointer;\n}\n\n.footer-container {\n  background-color: #f8f9fa;\n  margin-top: 10px;\n  padding: 10px 20px;\n}\n.footer-container h1 {\n  font-weight: 200;\n  font-size: 20px;\n}\n.footer-container h5 {\n  font-size: 16px;\n  font-weight: 100;\n}\n\n.about-container {\n  min-height: calc(100vh - 56px);\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.sub-about-container {\n  margin-top: 24px;\n}\n.sub-about-container h5 {\n  font-weight: 400;\n}\n\n.product-img {\n  width: 100%;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.title-img {\n  margin-top: 10px;\n  text-align: right;\n  font-weight: 400;\n}\n\n.product-item-container {\n  border: 1px solid #b4b4b4;\n  border-radius: 8px;\n  background-color: #ffffff;\n  min-height: 500px;\n}\n\n.product-desctiption {\n  padding: 30px 28px;\n}\n\n.book-price {\n  font-size: 16px;\n  text-decoration: line-through;\n  margin-right: 10px;\n}\n\n.discount-price {\n  font-size: 20px;\n  color: #ee4d2d;\n}\n\n.add-to-card {\n  border: #e9e8e8 1px solid;\n}\n.add-to-card .card-body {\n  padding: 36px;\n}\n.add-to-card .quatity-cart {\n  width: 100%;\n  margin: 20px 0;\n  padding: 4px;\n  display: flex;\n  justify-content: space-between;\n  border-radius: 10px;\n  box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;\n}\n.add-to-card .quatity-cart span {\n  cursor: pointer;\n  font-size: 28px;\n  border-radius: 15px;\n}\n.add-to-card .quatity-cart button {\n  height: 42px;\n  width: 42px;\n  background-color: #015958;\n  border: none;\n  border-radius: 50%;\n  color: #ffffff;\n}\n\n.customer-revie-container span {\n  text-decoration: underline;\n  margin-left: 10px;\n}\n.customer-revie-container .sort-select-date {\n  width: 300px;\n  margin-right: 10px;\n}\n\n.customer-review-container {\n  padding: 24px 20px;\n}\n.customer-review-container span {\n  cursor: pointer;\n  margin: 0 10px 0 0;\n  text-decoration: underline;\n}\n.customer-review-container span .total {\n  font-weight: 700;\n}\n.customer-review-container .review-container {\n  margin-top: 12px;\n}\n.customer-review-container .review-container span {\n  font-weight: 100;\n  font-size: 13px;\n  text-decoration: none;\n  margin: 0;\n}\n.customer-review-container .review-container h6 {\n  font-weight: 400;\n  font-size: 16px;\n}\n.customer-review-container .review-container p {\n  margin-bottom: 8;\n}\n.customer-review-container .review-container hr {\n  margin: 10px 0;\n  height: 3px;\n  border: none;\n  background-color: #e4e4e4;\n}\n\n.navbar-container .navbar-brand {\n  cursor: pointer;\n}\n.navbar-container .nav-link {\n  margin-right: 4px;\n  font-weight: 700px !important;\n  border-radius: 4px;\n}\n.navbar-container .nav-link:hover {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n.navbar-container .active {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n\n.btn-custom {\n  color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  border: none;\n  width: 100%;\n  padding: 4px 8px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  background-color: #0cf25d;\n}\n.btn-custom:hover {\n  background-color: #f28705;\n}\n\n.container-signin .modal-content {\n  max-width: 450px;\n  max-height: 600px;\n  margin: 2rem auto;\n}\n.container-signin h1 {\n  text-align: center;\n  margin: 36px 0 60px;\n}\n.container-signin .name-field,\n.container-signin .email-field,\n.container-signin .password-field {\n  display: block;\n  width: 360px;\n  height: 40px;\n  font-size: 16px;\n  padding-left: 16px;\n  margin: auto;\n  border-radius: 8px;\n  outline: none;\n  border: 1px solid #d0cccc;\n  margin-bottom: 10px;\n  margin-top: 20px;\n}\n.container-signin .btn-login {\n  padding-top: 16px;\n  margin-top: 24px;\n  width: 360px;\n  margin: auto;\n  margin-bottom: 30px;\n  display: flex;\n  justify-content: center;\n}\n.container-signin span {\n  cursor: pointer;\n  text-decoration: underline;\n}\n\n.cart-container {\n  min-height: calc(100vh - 166px);\n}\n\n.input-quantity {\n  width: 30px;\n}\n\n.img-cart {\n  width: 100%;\n}\n\n.quantity-cart {\n  border: 1px solid #ccc;\n  width: 80px;\n}\n.quantity-cart button {\n  border: none;\n}\n\n.alert-custome {\n  position: absolute;\n  top: 60px;\n  right: 10px;\n  width: 500px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: #f0f2f5;\n}\n\n.card-item {\n  cursor: pointer;\n  margin-bottom: 10px;\n  margin-top: 10px;\n  width: 16rem;\n  height: 26rem;\n  display: flex;\n  justify-content: center;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.card-item .card-img-top {\n  width: 100%;\n  height: 70%;\n  display: block;\n  margin: 0 auto;\n}\n.card-item .card-body {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.card-item .card-title {\n  font-size: 18px;\n}\n.card-item .card-price-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}\n.card-item .card-price-book .text-price {\n  color: #ee4d2d;\n}\n\n.carousel-book .react-multi-carousel-item {\n  display: flex;\n  justify-content: center;\n}\n\n.container-onsale-title {\n  margin-top: 24px;\n  padding: 16px 0;\n}\n.container-onsale-title .onsale-title {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n}\n.container-onsale-title .onsale-title h1 {\n  font-size: 28px;\n}\n.container-onsale-title .btn-primary {\n  background-color: #20cccc;\n  border: none;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  border-radius: 10px;\n  width: 150px;\n  padding: 8px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n}\n.container-onsale-title .btn-primary:hover {\n  background-color: #66ccff;\n}\n\n.container-carousel {\n  background-color: #ffffff;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  padding: 30px 30px;\n  width: 100%;\n}\n\n.container-featured {\n  margin-top: 24px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.container-featured h1 {\n  margin: auto;\n  font-size: 28px;\n}\n.container-featured .filter-featured-book {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n.container-featured .filter-featured-book h2 {\n  background-color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  width: 190px;\n  padding: 16px 28px;\n  margin: 10px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.container-featured .filter-featured-book h2:hover {\n  background-color: #8ee4af;\n}\n.container-featured .filter-featured-book .featured-active {\n  background-color: #5cdb95;\n  color: #ffffff;\n}\n\n.col-item {\n  display: flex;\n  justify-content: center;\n}\n\n.shop-container {\n  margin-top: 24px;\n}\n.shop-container .block-filter {\n  margin-top: 10px;\n  padding: 10px;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px;\n}\n.shop-container .block-filter h1 {\n  font-size: 16px;\n}\n.shop-container .block-filter li {\n  list-style: none;\n  cursor: pointer;\n}\n.shop-container .sort-select {\n  width: 180px;\n  margin-right: 10px;\n}\n.shop-container .filter-number-select {\n  width: 112px;\n}\n.shop-container .sorting-container {\n  margin-bottom: 10px;\n}\n\n.accordion-container {\n  margin-bottom: 10px;\n}\n.accordion-container .accordion-header {\n  color: #fff;\n  background-color: #ff854d;\n  cursor: pointer;\n}\n.accordion-container .accordion-item {\n  cursor: pointer;\n  background-color: #fff;\n}\n.accordion-container .accordion-item:hover {\n  background-color: #dfdbdb;\n}\n\n.page-link {\n  cursor: pointer;\n}\n\n.footer-container {\n  background-color: #f8f9fa;\n  margin-top: 10px;\n  padding: 10px 20px;\n}\n.footer-container h1 {\n  font-weight: 200;\n  font-size: 20px;\n}\n.footer-container h5 {\n  font-size: 16px;\n  font-weight: 100;\n}\n\n.about-container {\n  min-height: calc(100vh - 56px);\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.sub-about-container {\n  margin-top: 24px;\n}\n.sub-about-container h5 {\n  font-weight: 400;\n}\n\n.product-img {\n  width: 100%;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.title-img {\n  margin-top: 10px;\n  text-align: right;\n  font-weight: 400;\n}\n\n.product-item-container {\n  border: 1px solid #b4b4b4;\n  border-radius: 8px;\n  background-color: #ffffff;\n  min-height: 500px;\n}\n\n.product-desctiption {\n  padding: 30px 28px;\n}\n\n.book-price {\n  font-size: 16px;\n  text-decoration: line-through;\n  margin-right: 10px;\n}\n\n.discount-price {\n  font-size: 20px;\n  color: #ee4d2d;\n}\n\n.add-to-card {\n  border: #e9e8e8 1px solid;\n}\n.add-to-card .card-body {\n  padding: 36px;\n}\n.add-to-card .quatity-cart {\n  width: 100%;\n  margin: 20px 0;\n  padding: 4px;\n  display: flex;\n  justify-content: space-between;\n  border-radius: 10px;\n  box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;\n}\n.add-to-card .quatity-cart span {\n  cursor: pointer;\n  font-size: 28px;\n  border-radius: 15px;\n}\n.add-to-card .quatity-cart button {\n  height: 42px;\n  width: 42px;\n  background-color: #015958;\n  border: none;\n  border-radius: 50%;\n  color: #ffffff;\n}\n\n.customer-revie-container span {\n  text-decoration: underline;\n  margin-left: 10px;\n}\n.customer-revie-container .sort-select-date {\n  width: 300px;\n  margin-right: 10px;\n}\n\n.customer-review-container {\n  padding: 24px 20px;\n}\n.customer-review-container span {\n  cursor: pointer;\n  margin: 0 10px 0 0;\n  text-decoration: underline;\n}\n.customer-review-container span .total {\n  font-weight: 700;\n}\n.customer-review-container .review-container {\n  margin-top: 12px;\n}\n.customer-review-container .review-container span {\n  font-weight: 100;\n  font-size: 13px;\n  text-decoration: none;\n  margin: 0;\n}\n.customer-review-container .review-container h6 {\n  font-weight: 400;\n  font-size: 16px;\n}\n.customer-review-container .review-container p {\n  margin-bottom: 8;\n}\n.customer-review-container .review-container hr {\n  margin: 10px 0;\n  height: 3px;\n  border: none;\n  background-color: #e4e4e4;\n}\n\n.navbar-container .navbar-brand {\n  cursor: pointer;\n}\n.navbar-container .nav-link {\n  margin-right: 4px;\n  font-weight: 700px !important;\n  border-radius: 4px;\n}\n.navbar-container .nav-link:hover {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n.navbar-container .active {\n  background-color: #3cb076 !important;\n  color: #fff !important;\n}\n\n.btn-custom {\n  color: #ffffff;\n  text-align: center;\n  border-radius: 10px;\n  border: none;\n  width: 100%;\n  padding: 4px 8px;\n  font-size: 20px;\n  cursor: pointer;\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n  background-color: #0cf25d;\n}\n.btn-custom:hover {\n  background-color: #f28705;\n}\n\n.container-signin .modal-content {\n  max-width: 450px;\n  max-height: 600px;\n  margin: 2rem auto;\n}\n.container-signin h1 {\n  text-align: center;\n  margin: 36px 0 60px;\n}\n.container-signin .name-field,\n.container-signin .email-field,\n.container-signin .password-field {\n  display: block;\n  width: 360px;\n  height: 40px;\n  font-size: 16px;\n  padding-left: 16px;\n  margin: auto;\n  border-radius: 8px;\n  outline: none;\n  border: 1px solid #d0cccc;\n  margin-bottom: 10px;\n  margin-top: 20px;\n}\n.container-signin .btn-login {\n  padding-top: 16px;\n  margin-top: 24px;\n  width: 360px;\n  margin: auto;\n  margin-bottom: 30px;\n  display: flex;\n  justify-content: center;\n}\n.container-signin span {\n  cursor: pointer;\n  text-decoration: underline;\n}\n\n.cart-container {\n  min-height: calc(100vh - 166px);\n}\n\n.input-quantity {\n  width: 30px;\n}\n\n.img-cart {\n  width: 100%;\n}\n\n.quantity-cart {\n  border: 1px solid #ccc;\n  width: 80px;\n}\n.quantity-cart button {\n  border: none;\n}\n\n.alert-custome {\n  position: absolute;\n  top: 60px;\n  right: 10px;\n  width: 500px;\n  z-index: 9999;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

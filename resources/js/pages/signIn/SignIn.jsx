@@ -38,31 +38,34 @@ export default function SignIn(props) {
 				setVariant('success')
 				setChildren('login successful')
 				window.location.reload()
-
 			}
 		} catch (error) {
 			console.log('Failed to login: ', error)
-			if(error.response.status ===401){
+			if (error.response.status === 401) {
 				setVariant('danger')
 				setChildren('Email or password is incorrect')
+			}
+			if (error.response.status === 404) {
+				setVariant('info')
+				setChildren('This email is not registered')
 			}
 		}
 	}
 	const register = async () => {
 		try {
 			const res = await authApi.registerApi(dataRegister)
-			if(res.status ===200){
+			if (res.status === 200) {
 				console.log('register successfully: ', res);
 				setVariant('success')
 				setChildren('register successful')
 				setModalShow(false)
-			}if(res.status=422){
+			} if (res.status = 422) {
 				setVariant('success')
 				setChildren('register successful')
 			}
 		} catch (error) {
 			console.log('Failed to register: ', error.response.status)
-			if(error.response.status ===422){
+			if (error.response.status === 422) {
 				setVariant('danger')
 				setChildren('This email already register')
 			}

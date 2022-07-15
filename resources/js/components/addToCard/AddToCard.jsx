@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card';
+import AlertCustom from '../alert/AlertCustom';
 import ButtonCustom from '../button/ButtonCustom';
 
 
@@ -17,6 +18,9 @@ export default function AddToCart(props) {
 			setQuantity(quantity + 1)
 		}
 	}
+
+	const [variant, setVariant] = useState('')
+	const [children, setChildren] = useState('')
 	var allEntries = JSON.parse(localStorage.getItem('cart')) || [];
 	const handleAddCart = () => {
 		const data = {
@@ -45,32 +49,43 @@ export default function AddToCart(props) {
 		if (flag === false) {
 			newData.push(data);
 		}
+
+		setVariant('success')
+		setChildren('add to cart successful')
 		localStorage.setItem('cart', JSON.stringify(newData))
 	}
 	return (
-		<Card className='add-to-card'>
-			<Card.Header className="d-flex justify-content-start">
-				{
-					book.discount_price == book.final_price ?
-						<>
-							<span className="book-price">${(book.book_price * quantity).toFixed(2)}</span>
-							<span className="discount-price">${(book.discount_price * quantity).toFixed(2)}</span>
-						</>
-						:
-						<span className="discount-price">${(book.book_price * quantity).toFixed(2)}</span>
-				}
-			</Card.Header>
-			<Card.Body className="d-flex flex-column align-items-center">
-				<h6>Quantity</h6>
-				<div className="quatity-cart">
-					<button onClick={() => handleMinus()}>-</button>
-					<span>{quantity}</span>
-					<button onClick={() => handleAdd()}>+</button>
-				</div>
-				<div onClick={() => handleAddCart()} className='d-flex justify-content-center w-100'>
-					<ButtonCustom text={'Add to cart'} />
-				</div>
-			</Card.Body>
-		</Card>
+		<>
+			{
+				variant ?
+					<AlertCustom variant={variant} children={children} />
+					:
+					null
+			}
+			<Card className='add-to-card'>
+				<Card.Header className="d-flex justify-content-start">
+					{
+						book.discount_price == book.final_price ?
+							<>
+								<span className="book-price">${(book.book_price * quantity).toFixed(2)}</span>
+								<span className="discount-price">${(book.discount_price * quantity).toFixed(2)}</span>
+							</>
+							:
+							<span className="discount-price">${(book.book_price * quantity).toFixed(2)}</span>
+					}
+				</Card.Header>
+				<Card.Body className="d-flex flex-column align-items-center">
+					<h6>Quantity</h6>
+					<div className="quatity-cart">
+						<button onClick={() => handleMinus()}>-</button>
+						<span>{quantity}</span>
+						<button onClick={() => handleAdd()}>+</button>
+					</div>
+					<div onClick={() => handleAddCart()} className='d-flex justify-content-center w-100'>
+						<ButtonCustom text={'Add to cart'} />
+					</div>
+				</Card.Body>
+			</Card>
+		</>
 	)
 }
